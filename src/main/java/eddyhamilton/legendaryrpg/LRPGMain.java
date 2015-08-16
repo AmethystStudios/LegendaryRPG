@@ -1,5 +1,5 @@
 package eddyhamilton.legendaryrpg;
-//hi
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
 import net.minecraft.block.material.Material;
@@ -38,7 +38,8 @@ import eddyhamilton.legendaryrpg.worldgen.OreGenerator2;
 public class LRPGMain {
 	@SidedProxy(clientSide = "eddyhamilton.legendaryrpg.ClientProxy", serverSide = "eddyhamilton.legendaryrpg.ServerProxy")
 	public static ServerProxy proxy;
-
+// pretending I made Major Changes
+	
 	// Creative Tabs, fussy things. Use this template if you ever need to make
 	// another.
 	public static CreativeTabs tabLegendaryRPG = new CreativeTabs("tabLegendaryRPG") {
