@@ -15,6 +15,7 @@ LICENSE-fml.txt
 MinecraftForge-Credits.txt
 MinecraftForge-License.txt
 README.txt
+.classpath
 
 # Ignore Gradle GUI config
 #gradle-app.setting
