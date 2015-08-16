@@ -113,7 +113,5 @@ public class BlockPyroBomb extends BlockTNT {
         this.field_150116_a = p_149651_1_.registerIcon(this.getTextureName() + "_top");
         this.field_150115_b = p_149651_1_.registerIcon(this.getTextureName() + "_bottom");
     }
-	public CreativeTabs[] getCreativeTabs() {
-	 return new CreativeTabs[] {CreativeTabs.tabRedstone, LRPGMain.tabLegendaryRPG}; 
-	}
+
 }

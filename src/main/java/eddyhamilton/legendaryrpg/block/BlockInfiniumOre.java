@@ -17,12 +17,7 @@ public class BlockInfiniumOre extends Block
         this.setLightLevel(1.0f);
         this.setHarvestLevel("pickaxe", 3);
         this.setBlockTextureName(LRPGMain.MODID + ":" + string);
-    
-    
     }
-	public CreativeTabs[] getCreativeTabs() {
-	 return new CreativeTabs[] {CreativeTabs.tabBlock, LRPGMain.tabLegendaryRPG}; 
-	}
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_, int p_149668_2_, int p_149668_3_, int p_149668_4_)
     {
         float f = 0.125F;

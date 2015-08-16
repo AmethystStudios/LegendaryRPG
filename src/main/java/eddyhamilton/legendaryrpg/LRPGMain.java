@@ -137,9 +137,9 @@ public class LRPGMain {
 		
 		// Block Initialization
 		blockBooger = new BlockBooger(Material.web).setBlockName("BlockBooger");
-		blockInfiniumOre = new BlockInfiniumOre("InfiniumOre", Material.sand).setBlockName("InfiniumOre");
-		blockInfiniumBlock = new BasicBlock("InfiniumBlock", Material.iron).setBlockName("InfiniumBlock").setCreativeTab(CreativeTabs.tabBlock);
-		blockPyroBomb = new BlockPyroBomb().setBlockName("PyroBomb");
+		blockInfiniumOre = new BlockInfiniumOre("InfiniumOre", Material.sand).setBlockName("InfiniumOre").setCreativeTab(LRPGMain.tabLegendaryRPG);
+		blockInfiniumBlock = new BasicBlock("InfiniumBlock", Material.iron).setBlockName("InfiniumBlock").setCreativeTab(LRPGMain.tabLegendaryRPG);
+		blockPyroBomb = new BlockPyroBomb().setBlockName("PyroBomb").setCreativeTab(LRPGMain.tabLegendaryRPG);
 
 		// Tool/Armor/Item Initialization
 		// Still working on this!!
