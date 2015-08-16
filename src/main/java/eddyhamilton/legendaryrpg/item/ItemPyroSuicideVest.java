@@ -39,7 +39,7 @@ public class ItemPyroSuicideVest extends ItemArmor {
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4)
 	{
-	list.add("What are you doing?! THIS IS A BOMB!");
+	list.add("Temporary texture!");
 	}
 	
 	

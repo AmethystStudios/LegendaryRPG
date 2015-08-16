@@ -88,6 +88,8 @@ public class LRPGMain {
 	public static Item itemConductiveWiring;
 	public static Item itemCreeperBrain;
 	public static Item itemBlazeHeart;
+	public static Item itemPyroSuicideVest;
+	
 	// Block
 	public static BlockChest blockInfiniumChest;
 	public static Block blockInfiniumBlock;
@@ -146,26 +148,28 @@ public class LRPGMain {
 
 		// Tool/Armor/Item Initialization
 		// Still working on this!!
+		itemPyroSuicideVest = new ItemPyroSuicideVest(SuicideMaterial, 0, 1).setUnlocalizedName("PyroSuicideVest")
+				.setTextureName(MODID + ":PyroSuicideVest");
 		itemSuicideVest = new ItemSuicideVest(SuicideMaterial, 0, 1).setUnlocalizedName("SuicideVest")
-				.setTextureName(MODID + ":SuicideVest").setCreativeTab(CreativeTabs.tabCombat);
+				.setTextureName(MODID + ":SuicideVest");
 		itemInfiniumHelmet = new ItemInfiniumArmor(InfiniumArmor, 0, 0).setUnlocalizedName("InfiniumHelmet")
-				.setTextureName("lrpg:InfiniumHelmet").setCreativeTab(CreativeTabs.tabCombat);
+				.setTextureName(MODID + ":InfiniumHelmet").setCreativeTab(CreativeTabs.tabCombat);
 		itemInfiniumChestplate = new ItemInfiniumArmor(InfiniumArmor, 0, 1).setUnlocalizedName("InfiniumChest")
-				.setTextureName("lrpg:InfiniumChestplate").setCreativeTab(CreativeTabs.tabCombat);
+				.setTextureName(MODID + ":InfiniumChestplate").setCreativeTab(CreativeTabs.tabCombat);
 		itemInfiniumLegs = new ItemInfiniumArmor(InfiniumArmor, 0, 2).setUnlocalizedName("InfiniumLegs")
-				.setTextureName("lrpg:InfiniumLegs").setCreativeTab(CreativeTabs.tabCombat);
+				.setTextureName(MODID + ":InfiniumLegs").setCreativeTab(CreativeTabs.tabCombat);
 		itemInfiniumBoots = new ItemInfiniumArmor(InfiniumArmor2, 0, 3).setUnlocalizedName("InfiniumBoots")
-				.setTextureName("lrpg:InfiniumBoots").setCreativeTab(CreativeTabs.tabCombat);
+				.setTextureName(MODID + ":InfiniumBoots").setCreativeTab(CreativeTabs.tabCombat);
 		itemGodArmorHelmet = new GodArmor(GodArmor, 0, 0).setUnlocalizedName("GodHelmet")
-				.setTextureName("lrpg:GodHelmet").setCreativeTab(tabLegendaryRPG);
+				.setTextureName(MODID + ":GodHelmet").setCreativeTab(tabLegendaryRPG);
 		itemGodArmorChestplate = new GodArmor(GodArmor, 0, 1).setUnlocalizedName("GodChestplate")
-				.setTextureName("lrpg:GodChestplate").setCreativeTab(tabLegendaryRPG);
+				.setTextureName(MODID + ":GodChestplate").setCreativeTab(tabLegendaryRPG);
 		itemGodArmorLeggings = new GodArmor(GodArmor, 0, 2).setUnlocalizedName("GodLeggings")
-				.setTextureName("lrpg:GodLeggins").setCreativeTab(tabLegendaryRPG);
+				.setTextureName(MODID + ":GodLeggins").setCreativeTab(tabLegendaryRPG);
 		itemGodArmorBoots = new GodArmor(GodArmor, 0, 3).setUnlocalizedName("GodBoots").setTextureName("lrpg:GodBoots")
 				.setCreativeTab(tabLegendaryRPG);
 		itemOpSpeedBoots = new OpSpeedBoots(OpSpeedBoots, 0, 3).setUnlocalizedName("OpSpeedBoots")
-				.setTextureName("lrpg:BootsofSwiftness").setCreativeTab(tabLegendaryRPG);
+				.setTextureName(MODID + ":BootsofSwiftness").setCreativeTab(tabLegendaryRPG);
 		itemRennet = new BasicItem("Rennet", "I can use this to make cheese!").setMaxStackSize(32).setCreativeTab(CreativeTabs.tabMaterials);
 		itemConductiveWiring = new BasicItem("ConductiveWiring", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
 		itemCheese = new AdvancedFood("Cheese", 3, 0.5F, false);
@@ -225,6 +229,7 @@ public class LRPGMain {
 		GameRegistry.registerItem(itemRennet, "Rennet");
 		GameRegistry.registerItem(itemCheese, "Cheese");
 		GameRegistry.registerItem(itemSuicideVest, "SuicideVest");
+		GameRegistry.registerItem(itemPyroSuicideVest, "PyroSuicideVest");
 		GameRegistry.registerItem(itemSuicideDetonator = new WeaponSword("SuicideDetonator", SuicideMaterial2),
 				"SuicideDetonator");
 		
