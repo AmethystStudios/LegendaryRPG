@@ -1,0 +1,16 @@
+[
+{
+  "modid": "lrpg",
+  "name": "LegendaryRPG",
+  "description": "Rocking the heck outta adventure",
+  "version": "0.7",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Me."],
+  "credits": "No credits for egg suckers.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

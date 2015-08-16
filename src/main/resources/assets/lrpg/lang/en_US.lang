@@ -1,0 +1,43 @@
+Items
+
+item.Booger.name=Booger
+item.InfiniumHelmet.name=Infinium Helmet
+item.InfiniumChest.name=Infinium Chestplate
+item.InfiniumLegs.name=Infinium Leggings
+item.InfiniumBoots.name=Infinium Boots
+item.InfiniumPickaxe.name=Infinium Pickaxe
+item.InfiniumAxe.name=Infinium Axe
+item.InfiniumHoe.name=Infinium Hoe
+item.InfiniumShovel.name=Infinium Shovel
+item.InfiniumSword.name=Infinium Sword
+item.InfiniumMultitool.name=Infinium Multitool
+item.RefinedInfiniumIngot.name=Refined Infinium Ingot
+item.UnrefinedInfiniumIngot.name=Unrefined Infinium Ingot
+item.InfiniumNugget.name=Infinium Nugget
+item.OpSpeedBoots.name=Boots of Swiftness
+item.GodHelmet.name=God Armor Helmet
+item.GodChestplate.name=God Armor Chestplate
+item.GodLeggings.name=God Armor Leggings
+item.GodBoots.name=God Armor Boots
+item.Rennet.name=Rennet
+item.Cheese.name=Cheese
+item.ObsidianCarrot.name=Obsidian Carrot
+item.SuicideVest.name=Suicide Vest
+item.SuicideDetonator.name=Suicide Detonator
+item.CreeperBrain.name=Creeper Brain
+item.BlazeHeart.name=Blaze Heart
+item.ConductiveWiring.name=Conductive Wiring
+
+Blocks
+
+tile.InfiniumOre.name=Infinium Ore
+tile.BlockBooger.name=Booger Block
+tile.InfiniumBlock.name=Infinium Block
+tile.PyroBomb.name=PyroBomb-Less WIP than before
+
+Creative Tabs
+itemGroup.tabLegendaryRPG=LegendaryRPG
+
+DamageSources
+death.attack.lrpg.SuicideDamage=%s commited suicide with a explosive vest!
+death.attack.lrpg.SuicideDamage.player=%1$s was blown up with a explosive vest by %2$s! 
