@@ -55,6 +55,11 @@ public class LRPGMain {
 	public static Item itemBooger;
 	public static Item itemObsidianCarrot;
 
+	
+	/*
+	 * this comment is un-needed, and neither is the one below it :P
+	 * Commentor: UberAffe
+	 */
 	/*
 	 * = new AdvancedFood("ItemBooger", 5, 0.8F, false
 	 * ).setUnlocalizedName("ItemBooger").setCreativeTab ( tabLegendaryRPG);
