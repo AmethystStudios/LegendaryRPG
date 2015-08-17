@@ -172,7 +172,7 @@ public class LRPGMain {
 		itemSuicideDetonator = new WeaponSword("SuicideDetonator", SuicideMaterial2).setCreativeTab(CreativeTabs.tabCombat).setTextureName(MODID + ":SuicideDetonator");
 		itemCreeperBrain = new BasicItem("CreeperBrain", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
 		itemBlazeHeart = new BasicItem("BlazeHeart", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
-		itemWolfScroll = new WolfScroll(SuicideMaterial2, "WolfScroll", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabCombat);
+		itemWolfScroll = new WolfScroll(SuicideMaterial2, "WolfScroll", "RELEASE THE DOGS! Currently WIP").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabCombat);
 
 		
 		// Block Registry

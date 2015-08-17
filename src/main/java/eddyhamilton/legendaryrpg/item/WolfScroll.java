@@ -6,6 +6,7 @@ import eddyhamilton.legendaryrpg.LRPGMain;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityExpBottle;
+import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -34,28 +35,12 @@ public class WolfScroll extends ItemSword  {
 	   
 	   public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player)
 	    {
-		   world.spawnEntityInWorld(new EntityWolf(world));
+           EntityWolf entitywolf = new EntityWolf(player.worldObj);
+           entitywolf.isTamed();
+           entitywolf.setLocationAndAngles(player.posX, player.posY, player.posZ, player.rotationYaw, 0.0F);
+           player.worldObj.spawnEntityInWorld(entitywolf);
 		   return itemstack;
 	    }
-	   
-	   
-	   /*
-	    public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player)
-	    {
-	        if (!world.isRemote)
-	        {
-	            world.spawnEntityInWorld(new EntityWolf(world));
-	        }
-
-	        return itemstack;
-	    }
-	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean bool) {
-			 list.add(setToolTipData());
-		   }
-		   private String setToolTipData(){
-			 return this.setInfo;
-		    }
-*/
 	@Override
 	public CreativeTabs[] getCreativeTabs() {
 		return new CreativeTabs[] { LRPGMain.tabLegendaryRPG, }; 
