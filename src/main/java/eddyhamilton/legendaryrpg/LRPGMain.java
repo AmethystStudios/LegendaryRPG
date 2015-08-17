@@ -57,11 +57,6 @@ public class LRPGMain {
 	// Items, Tools, Armor
 	public static Item itemBooger;
 	public static Item itemObsidianCarrot;
-
-	/*
-	 * = new AdvancedFood("ItemBooger", 5, 0.8F, false
-	 * ).setUnlocalizedName("ItemBooger").setCreativeTab ( tabLegendaryRPG);
-	 */
 	public static Item itemInfiniumHelmet;
 	public static Item itemInfiniumChestplate;
 	public static Item itemInfiniumLegs;
@@ -89,6 +84,7 @@ public class LRPGMain {
 	public static Item itemCreeperBrain;
 	public static Item itemBlazeHeart;
 	public static Item itemPyroSuicideVest;
+	public static Item itemWolfScroll;
 	
 	// Block
 	public static BlockChest blockInfiniumChest;
@@ -142,9 +138,9 @@ public class LRPGMain {
 		
 		// Block Initialization
 		blockBooger = new BlockBooger(Material.web).setBlockName("BlockBooger");
-		blockInfiniumOre = new BlockInfiniumOre("InfiniumOre", Material.sand).setBlockName("InfiniumOre");
-		blockInfiniumBlock = new BasicBlock("InfiniumBlock", Material.iron).setBlockName("InfiniumBlock").setCreativeTab(CreativeTabs.tabBlock);
-		blockPyroBomb = new BlockPyroBomb().setBlockName("PyroBomb");
+		blockInfiniumOre = new BlockInfiniumOre("InfiniumOre", Material.sand).setBlockName("InfiniumOre").setCreativeTab(LRPGMain.tabLegendaryRPG);
+		blockInfiniumBlock = new BasicBlock("InfiniumBlock", Material.iron).setBlockName("InfiniumBlock").setCreativeTab(LRPGMain.tabLegendaryRPG);
+		blockPyroBomb = new BlockPyroBomb().setBlockName("PyroBomb").setCreativeTab(LRPGMain.tabLegendaryRPG);
 
 		// Tool/Armor/Item Initialization
 		// Still working on this!!
@@ -176,7 +172,8 @@ public class LRPGMain {
 		itemSuicideDetonator = new WeaponSword("SuicideDetonator", SuicideMaterial2).setCreativeTab(CreativeTabs.tabCombat).setTextureName(MODID + ":SuicideDetonator");
 		itemCreeperBrain = new BasicItem("CreeperBrain", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
 		itemBlazeHeart = new BasicItem("BlazeHeart", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
-		
+		itemWolfScroll = new WolfScroll(SuicideMaterial2, "WolfScroll", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabCombat);
+
 		
 		// Block Registry
 		GameRegistry.registerBlock(blockInfiniumOre, "InfiniumOre");
@@ -232,6 +229,7 @@ public class LRPGMain {
 		GameRegistry.registerItem(itemPyroSuicideVest, "PyroSuicideVest");
 		GameRegistry.registerItem(itemSuicideDetonator = new WeaponSword("SuicideDetonator", SuicideMaterial2),
 				"SuicideDetonator");
+		GameRegistry.registerItem(itemWolfScroll, "WolfScroll");
 		
 		
 	}

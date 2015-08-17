@@ -13,7 +13,4 @@ public class BasicBlock extends Block{
         this.setBlockTextureName(LRPGMain.MODID + ":" + string);	
 	}
 
-	public CreativeTabs[] getCreativeTabs() {
-	 return new CreativeTabs[] {LRPGMain.tabLegendaryRPG}; 
-	}
 }
