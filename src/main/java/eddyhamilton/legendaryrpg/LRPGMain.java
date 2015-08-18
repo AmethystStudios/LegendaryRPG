@@ -85,6 +85,7 @@ public class LRPGMain {
 	public static Item itemBlazeHeart;
 	public static Item itemPyroSuicideVest;
 	public static Item itemWolfScroll;
+	public static Item itemSpawnpointScroll;
 	
 	// Block
 	public static BlockChest blockInfiniumChest;
@@ -174,6 +175,7 @@ public class LRPGMain {
 		itemCreeperBrain = new BasicItem("CreeperBrain", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
 		itemBlazeHeart = new BasicItem("BlazeHeart", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
 		itemWolfScroll = new WolfScroll("WolfScroll", "RELEASE THE DOGS! Currently WIP").setMaxStackSize(1);
+		itemSpawnpointScroll = new SpawnpointScroll("SpawnpointScroll", "Introducing Insta-Bed!").setMaxStackSize(1);
 
 		
 		// Block Registry
@@ -231,6 +233,7 @@ public class LRPGMain {
 		GameRegistry.registerItem(itemSuicideDetonator = new WeaponSword("SuicideDetonator", SuicideMaterial2),
 				"SuicideDetonator");
 		GameRegistry.registerItem(itemWolfScroll, "WolfScroll");
+		GameRegistry.registerItem(itemSpawnpointScroll, "SpawnpointScroll");
 		
 		
 	}

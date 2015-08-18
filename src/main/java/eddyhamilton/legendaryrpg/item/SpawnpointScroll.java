@@ -25,11 +25,11 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
-public class WolfScroll extends Item {
+public class SpawnpointScroll extends Item {
 
 	private final String setInfo;
 
-	public WolfScroll(String string, String string2) {
+	public SpawnpointScroll(String string, String string2) {
 		super();
 		this.setUnlocalizedName(string);
 		this.setTextureName(LRPGMain.MODID + ":" + string);
@@ -40,18 +40,9 @@ public class WolfScroll extends Item {
 
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
-			EntityWolf entitywolf = new EntityWolf(player.worldObj);
-			entitywolf.func_152115_b(player.getUniqueID().toString());
-			entitywolf.setTamed(true);
-			entitywolf.setPathToEntity((PathEntity) null);
-			entitywolf.setAttackTarget((EntityLivingBase) null);
-			entitywolf.setHealth(20.0F);
-			entitywolf.worldObj.setEntityState(entitywolf, (byte) 7);
-			entitywolf.setCollarColor(10);
-			entitywolf.setPositionAndUpdate(player.posX, player.posY, player.posZ);
-			player.worldObj.spawnEntityInWorld(entitywolf);
+			player.setSpawnChunk(player.playerLocation, true);
 			player.destroyCurrentEquippedItem();
-			world.playSoundAtEntity(player, "lrpg:wolfscroll", 1, 1);
+			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 10));
 		}
 
 		Random rand = new Random();
