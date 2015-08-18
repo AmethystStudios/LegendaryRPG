@@ -144,6 +144,7 @@ public class LRPGMain {
 
 		// Tool/Armor/Item Initialization
 		// Still working on this!!
+		
 		itemPyroSuicideVest = new ItemPyroSuicideVest(SuicideMaterial, 0, 1).setUnlocalizedName("PyroSuicideVest")
 				.setTextureName(MODID + ":PyroSuicideVest");
 		itemSuicideVest = new ItemSuicideVest(SuicideMaterial, 0, 1).setUnlocalizedName("SuicideVest")
@@ -172,7 +173,7 @@ public class LRPGMain {
 		itemSuicideDetonator = new WeaponSword("SuicideDetonator", SuicideMaterial2).setCreativeTab(CreativeTabs.tabCombat).setTextureName(MODID + ":SuicideDetonator");
 		itemCreeperBrain = new BasicItem("CreeperBrain", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
 		itemBlazeHeart = new BasicItem("BlazeHeart", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
-		itemWolfScroll = new WolfScroll(SuicideMaterial2, "WolfScroll", "RELEASE THE DOGS! Currently WIP").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabCombat);
+		itemWolfScroll = new WolfScroll("WolfScroll", "RELEASE THE DOGS! Currently WIP").setMaxStackSize(1);
 
 		
 		// Block Registry

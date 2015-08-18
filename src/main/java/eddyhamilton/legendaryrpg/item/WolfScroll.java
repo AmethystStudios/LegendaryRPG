@@ -1,9 +1,11 @@
 package eddyhamilton.legendaryrpg.item;
 
 import java.util.List;
+import java.util.Random;
 
 import eddyhamilton.legendaryrpg.LRPGMain;
 import net.minecraft.block.Block;
+import net.minecraft.client.particle.EntityReddustFX;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityExpBottle;
@@ -23,15 +25,17 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
-public class WolfScroll extends ItemSword {
+public class WolfScroll extends Item {
 
 	private final String setInfo;
 
-	public WolfScroll(ToolMaterial material, String string, String string2) {
-		super(material);
+	public WolfScroll(String string, String string2) {
+		super();
 		this.setUnlocalizedName(string);
 		this.setTextureName(LRPGMain.MODID + ":" + string);
 		this.setInfo = string2;
+		;
+
 	}
 
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
@@ -46,12 +50,23 @@ public class WolfScroll extends ItemSword {
 			entitywolf.setCollarColor(10);
 			entitywolf.setPositionAndUpdate(player.posX, player.posY, player.posZ);
 			player.worldObj.spawnEntityInWorld(entitywolf);
+			player.destroyCurrentEquippedItem();
+			world.playSoundAtEntity(player, "lrpg:wolfscroll", 1, 1);
+		}
+
+		Random rand = new Random();
+		for (int countparticles = 0; countparticles <= 20; ++countparticles) {
+			world.spawnParticle("explode", player.posX + (rand.nextDouble() - 0.5D) * (double) player.width,
+					player.posY + rand.nextDouble() * (double) player.height
+							- (double) player.yOffset,
+					player.posZ + (rand.nextDouble() - 0.5D) * (double) player.width, 0.0D, 0.0D,
+					0.0D);
 		}
 		return itemstack;
 	}
 
 	@Override
 	public CreativeTabs[] getCreativeTabs() {
-		return new CreativeTabs[] { LRPGMain.tabLegendaryRPG, };
+		return new CreativeTabs[] { LRPGMain.tabLegendaryRPG, CreativeTabs.tabCombat };
 	}
 }
