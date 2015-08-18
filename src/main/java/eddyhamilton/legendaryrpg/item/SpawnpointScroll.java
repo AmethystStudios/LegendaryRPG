@@ -22,6 +22,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathEntity;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
@@ -40,9 +41,10 @@ public class SpawnpointScroll extends Item {
 
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
-			player.setSpawnChunk(player.playerLocation, true);
-			player.destroyCurrentEquippedItem();
-			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 10));
+            ChunkCoordinates chunkcoordinates = player.getPlayerCoordinates();
+            player.setSpawnChunk(chunkcoordinates, true);			
+            player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 10));
+            player.destroyCurrentEquippedItem();
 		}
 
 		Random rand = new Random();
