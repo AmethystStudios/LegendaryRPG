@@ -38,7 +38,7 @@ public class WolfScroll extends Item {
 
 	}
 
-	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
+	public ItemStack onItemUse(ItemStack itemstack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
 			EntityWolf entitywolf = new EntityWolf(player.worldObj);
 			entitywolf.func_152115_b(player.getUniqueID().toString());
