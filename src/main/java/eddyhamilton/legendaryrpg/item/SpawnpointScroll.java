@@ -2,7 +2,6 @@ package eddyhamilton.legendaryrpg.item;
 
 import java.util.List;
 import java.util.Random;
-
 import eddyhamilton.legendaryrpg.LRPGMain;
 import net.minecraft.block.Block;
 import net.minecraft.client.particle.EntityReddustFX;
@@ -42,14 +41,13 @@ public class SpawnpointScroll extends Item {
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
             ChunkCoordinates chunkcoordinates = player.getPlayerCoordinates();
-            player.setSpawnChunk(chunkcoordinates, true);			
-            player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 10));
+            player.setSpawnChunk(chunkcoordinates, true);
             player.destroyCurrentEquippedItem();
 		}
 
 		Random rand = new Random();
 		for (int countparticles = 0; countparticles <= 20; ++countparticles) {
-			world.spawnParticle("explode", player.posX + (rand.nextDouble() - 0.5D) * (double) player.width,
+			world.spawnParticle("portal", player.posX + (rand.nextDouble() - 0.5D) * (double) player.width,
 					player.posY + rand.nextDouble() * (double) player.height
 							- (double) player.yOffset,
 					player.posZ + (rand.nextDouble() - 0.5D) * (double) player.width, 0.0D, 0.0D,
