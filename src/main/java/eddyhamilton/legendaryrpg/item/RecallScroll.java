@@ -49,7 +49,7 @@ public class RecallScroll extends Item {
             player.setPositionAndUpdate(chunkcoordinates.posX, chunkcoordinates.posY, chunkcoordinates.posZ);
             player.destroyCurrentEquippedItem();
             player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "You wake up at home..."));
-            
+			world.playSoundAtEntity(player, LRPGMain.MODID + ":teleport", 1, 1);
 
 
 		

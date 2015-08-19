@@ -1,3 +1,4 @@
   {
-  "wolfscroll": {"category": "master","sounds": ["wolfscroll"]}
+  "wolfscroll": {"category": "master","sounds": ["wolfscroll"]},
+    "teleport": {"category": "master","sounds": ["teleport"]}
   }
