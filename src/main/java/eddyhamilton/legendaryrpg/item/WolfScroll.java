@@ -51,7 +51,7 @@ public class WolfScroll extends Item {
 			entitywolf.setPositionAndUpdate(player.posX, player.posY, player.posZ);
 			player.worldObj.spawnEntityInWorld(entitywolf);
 			player.destroyCurrentEquippedItem();
-			world.playSoundAtEntity(player, "lrpg:wolfscroll", 1, 1);
+			world.playSoundAtEntity(player, LRPGMain.MODID + ":wolfscroll", 1, 1);
 		}
 
 		Random rand = new Random();

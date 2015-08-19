@@ -136,6 +136,8 @@ public class LRPGMain {
 	public void preInit(FMLPreInitializationEvent event) {
 
 		
+		
+		
 
 		
 		// Block Initialization
