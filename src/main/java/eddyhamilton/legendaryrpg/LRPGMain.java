@@ -52,7 +52,7 @@ public class LRPGMain {
 
 	public static final String MODID = "lrpg";
 	public static final String NAME = "LegendaryRPG";
-	public static final String VERSION = "1.0";
+	public static final String VERSION = "0.8.2.2";
 
 	// Items, Tools, Armor
 	public static Item itemBooger;
@@ -86,6 +86,7 @@ public class LRPGMain {
 	public static Item itemPyroSuicideVest;
 	public static Item itemWolfScroll;
 	public static Item itemSpawnpointScroll;
+	public static Item itemRecallScroll;
 	
 	// Block
 	public static BlockChest blockInfiniumChest;
@@ -176,6 +177,7 @@ public class LRPGMain {
 		itemBlazeHeart = new BasicItem("BlazeHeart", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
 		itemWolfScroll = new WolfScroll("WolfScroll", "RELEASE THE DOGS! Currently WIP").setMaxStackSize(1);
 		itemSpawnpointScroll = new SpawnpointScroll("SpawnpointScroll", "Introducing Insta-Bed!").setMaxStackSize(1);
+		itemRecallScroll = new RecallScroll("RecallScroll", "").setMaxStackSize(1);
 
 		
 		// Block Registry
@@ -234,6 +236,7 @@ public class LRPGMain {
 				"SuicideDetonator");
 		GameRegistry.registerItem(itemWolfScroll, "WolfScroll");
 		GameRegistry.registerItem(itemSpawnpointScroll, "SpawnpointScroll");
+		GameRegistry.registerItem(itemRecallScroll, "RecallScroll");
 		
 		
 	}

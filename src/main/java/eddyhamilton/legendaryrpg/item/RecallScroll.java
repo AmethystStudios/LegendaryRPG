@@ -25,13 +25,14 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 
-public class SpawnpointScroll extends Item {
+public class RecallScroll extends Item {
 
 	private final String setInfo;
 
-	public SpawnpointScroll(String string, String string2) {
+	public RecallScroll(String string, String string2) {
 		super();
 		this.setUnlocalizedName(string);
 		this.setTextureName(LRPGMain.MODID + ":" + string);
@@ -43,16 +44,20 @@ public class SpawnpointScroll extends Item {
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
 
-            ChunkCoordinates chunkcoordinates = player.getPlayerCoordinates();
-            player.setSpawnChunk(chunkcoordinates, true);
+            ChunkCoordinates chunkcoordinates = player.getBedLocation(player.dimension);
+            player.mountEntity((Entity)null);
+            player.setPositionAndUpdate(chunkcoordinates.posX, chunkcoordinates.posY, chunkcoordinates.posZ);
             player.destroyCurrentEquippedItem();
-            player.addChatMessage(new ChatComponentText("You feel bound to this place...."));
+            player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "You wake up at home..."));
+            
+
+
 		
 		}
 
 		Random rand = new Random();
 		for (int countparticles = 0; countparticles <= 20; ++countparticles) {
-			world.spawnParticle("portal", player.posX + (rand.nextDouble() - 0.5D) * (double) player.width,
+			world.spawnParticle("flame", player.posX + (rand.nextDouble() - 0.5D) * (double) player.width,
 					player.posY + rand.nextDouble() * (double) player.height
 							- (double) player.yOffset,
 					player.posZ + (rand.nextDouble() - 0.5D) * (double) player.width, 0.0D, 0.0D,
