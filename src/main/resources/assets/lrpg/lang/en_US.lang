@@ -38,6 +38,7 @@ tile.InfiniumOre.name=Infinium Ore
 tile.BlockBooger.name=Booger Block
 tile.InfiniumBlock.name=Infinium Block
 tile.PyroBomb.name=PyroBomb-Less WIP than before
+tile.GiantCake.name=Birthday Cake
 
 Creative Tabs
 itemGroup.tabLegendaryRPG=LegendaryRPG
@@ -45,3 +46,5 @@ itemGroup.tabLegendaryRPG=LegendaryRPG
 DamageSources
 death.attack.lrpg.SuicideDamage=%s commited suicide with a explosive vest!
 death.attack.lrpg.SuicideDamage.player=%1$s was blown up with a explosive vest by %2$s! 
+
+

@@ -34,7 +34,9 @@ import eddyhamilton.legendaryrpg.block.BasicBlock;
 import eddyhamilton.legendaryrpg.block.BlockBooger;
 import eddyhamilton.legendaryrpg.block.BlockInfiniumOre;
 import eddyhamilton.legendaryrpg.block.BlockPyroBomb;
+import eddyhamilton.legendaryrpg.block.GiantCake;
 import eddyhamilton.legendaryrpg.entity.EntityDireWolf;
+import eddyhamilton.legendaryrpg.entity.TileEntityGiantCake;
 import eddyhamilton.legendaryrpg.item.*;
 import eddyhamilton.legendaryrpg.worldgen.OreGenerator2;
 
@@ -96,6 +98,7 @@ public class LRPGMain {
 	public static Block blockInfiniumOre;
 	public static Block blockBooger;
 	public static Block blockPyroBomb;
+	public static Block blockGiantCake;
 	
 
 
@@ -160,6 +163,7 @@ public class LRPGMain {
 		blockInfiniumOre = new BlockInfiniumOre("InfiniumOre", Material.sand).setBlockName("InfiniumOre").setCreativeTab(LRPGMain.tabLegendaryRPG);
 		blockInfiniumBlock = new BasicBlock("InfiniumBlock", Material.iron).setBlockName("InfiniumBlock").setCreativeTab(LRPGMain.tabLegendaryRPG);
 		blockPyroBomb = new BlockPyroBomb().setBlockName("PyroBomb").setCreativeTab(LRPGMain.tabLegendaryRPG);
+		blockGiantCake = new GiantCake().setBlockName("GiantCake").setCreativeTab(tabLegendaryRPG);
 
 		// Tool/Armor/Item Initialization
 		// Still working on this!!
@@ -202,6 +206,9 @@ public class LRPGMain {
 		GameRegistry.registerBlock(blockInfiniumBlock, "InfiniumBlock");
 		GameRegistry.registerBlock(blockBooger, "BoogerBlock");
 		GameRegistry.registerBlock(blockPyroBomb, "PyroBomb");
+		GameRegistry.registerBlock(blockGiantCake, "GiantCake");
+		
+		GameRegistry.registerTileEntity(TileEntityGiantCake.class, "TileGiantCake");
 		
 		// Generation Registry
 		GameRegistry.registerWorldGenerator((IWorldGenerator) this.OreManager, 1);
@@ -327,7 +334,7 @@ public class LRPGMain {
 
 		GameRegistry.addSmelting(blockInfiniumOre, new ItemStack(itemInfiniumNugget, 1), 100.0F);
 
-		
+		proxy.registerRenderThings();
 		
 	}
 
