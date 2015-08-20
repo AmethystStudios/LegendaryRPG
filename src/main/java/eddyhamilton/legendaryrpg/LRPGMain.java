@@ -28,11 +28,13 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import eddyhamilton.legendaryrpg.block.BasicBlock;
 import eddyhamilton.legendaryrpg.block.BlockBooger;
 import eddyhamilton.legendaryrpg.block.BlockInfiniumOre;
 import eddyhamilton.legendaryrpg.block.BlockPyroBomb;
+import eddyhamilton.legendaryrpg.entity.EntityDireWolf;
 import eddyhamilton.legendaryrpg.item.*;
 import eddyhamilton.legendaryrpg.worldgen.OreGenerator2;
 
@@ -131,13 +133,26 @@ public class LRPGMain {
 		this.OreManager = new OreGenerator2();
 	}
 
+	public void registerModEntityWithEgg(Class parEntityClass, String parEntityName, 
+		      int parEggColor, int parEggSpotsColor)
+		{
+		    int modEntityID = 0;
+			EntityRegistry.registerModEntity(parEntityClass, parEntityName, ++modEntityID, 
+		          LRPGMain.MODID, 80, 3, false);
+		    registerSpawnEgg(parEntityName, parEggColor, parEggSpotsColor);
+		}
+	private void registerSpawnEgg(String parEntityName, int parEggColor, int parEggSpotsColor) {
+		
+		
+	}
+
 	// PreInit. Registers, Recipes, Configs,etc, go here.
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 
 		
 		
-		
+		registerModEntityWithEgg(EntityDireWolf.class, "DireWolf", 0x3F5505, 0x4E6414);
 
 		
 		// Block Initialization
@@ -241,7 +256,18 @@ public class LRPGMain {
 		GameRegistry.registerItem(itemRecallScroll, "RecallScroll");
 		
 		
+		
+		
+		
+		
+		Item itemSpawnEgg = new SpawnEggs("DireWolf", 0xE18519, 0x000000)
+			      .setUnlocalizedName("spawn_egg_"+"DireWolf".toLowerCase())
+			      .setTextureName("wildanimals:spawn_egg");
+			GameRegistry.registerItem(itemSpawnEgg, "spawnEgg"+"DireWolf");
+		
 	}
+
+
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
