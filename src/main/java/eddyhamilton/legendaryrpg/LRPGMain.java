@@ -95,7 +95,6 @@ public class LRPGMain {
 	public static Block blockInfiniumOre;
 	public static Block blockBooger;
 	public static Block blockPyroBomb;
-	public static Block blockGiantCake;
 	
 
 
@@ -187,7 +186,6 @@ public class LRPGMain {
 		GameRegistry.registerBlock(blockInfiniumBlock, "InfiniumBlock");
 		GameRegistry.registerBlock(blockBooger, "BoogerBlock");
 		GameRegistry.registerBlock(blockPyroBomb, "PyroBomb");
-		GameRegistry.registerBlock(blockGiantCake, "GiantCake");
 		
 		// Generation Registry
 		GameRegistry.registerWorldGenerator((IWorldGenerator) this.OreManager, 1);
@@ -282,7 +280,6 @@ public class LRPGMain {
 				new Object[] { "RRR", "RRR", "RRR", 'R', itemRefinedInfiniumIngot });
 		GameRegistry.addRecipe(new ItemStack(blockBooger), new Object[] { "RRR", "RRR", "RRR", 'R', itemBooger });
 		
-		
 		//Shapeless Recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(LRPGMain.itemBooger, 9), new Object[] { LRPGMain.blockBooger });
 		GameRegistry.addShapelessRecipe(new ItemStack(LRPGMain.itemRefinedInfiniumIngot, 9),
@@ -302,6 +299,8 @@ public class LRPGMain {
 
 		GameRegistry.addSmelting(blockInfiniumOre, new ItemStack(itemInfiniumNugget, 1), 100.0F);
 
+		
+		//Not really sure what to classify this under.
 		proxy.registerRenderThings();
 		
 	}
