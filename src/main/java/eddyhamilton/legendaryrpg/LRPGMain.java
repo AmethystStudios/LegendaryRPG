@@ -34,9 +34,6 @@ import eddyhamilton.legendaryrpg.block.BasicBlock;
 import eddyhamilton.legendaryrpg.block.BlockBooger;
 import eddyhamilton.legendaryrpg.block.BlockInfiniumOre;
 import eddyhamilton.legendaryrpg.block.BlockPyroBomb;
-import eddyhamilton.legendaryrpg.block.GiantCake;
-import eddyhamilton.legendaryrpg.entity.EntityDireWolf;
-import eddyhamilton.legendaryrpg.entity.TileEntityGiantCake;
 import eddyhamilton.legendaryrpg.item.*;
 import eddyhamilton.legendaryrpg.worldgen.OreGenerator2;
 
@@ -136,26 +133,11 @@ public class LRPGMain {
 		this.OreManager = new OreGenerator2();
 	}
 
-	public void registerModEntityWithEgg(Class parEntityClass, String parEntityName, 
-		      int parEggColor, int parEggSpotsColor)
-		{
-		    int modEntityID = 0;
-			EntityRegistry.registerModEntity(parEntityClass, parEntityName, ++modEntityID, 
-		          LRPGMain.MODID, 80, 3, false);
-		    registerSpawnEgg(parEntityName, parEggColor, parEggSpotsColor);
-		}
-	private void registerSpawnEgg(String parEntityName, int parEggColor, int parEggSpotsColor) {
-		
-		
-	}
 
 	// PreInit. Registers, Recipes, Configs,etc, go here.
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 
-		
-		
-		registerModEntityWithEgg(EntityDireWolf.class, "DireWolf", 0x3F5505, 0x4E6414);
 
 		
 		// Block Initialization
@@ -163,7 +145,6 @@ public class LRPGMain {
 		blockInfiniumOre = new BlockInfiniumOre("InfiniumOre", Material.sand).setBlockName("InfiniumOre").setCreativeTab(LRPGMain.tabLegendaryRPG);
 		blockInfiniumBlock = new BasicBlock("InfiniumBlock", Material.iron).setBlockName("InfiniumBlock").setCreativeTab(LRPGMain.tabLegendaryRPG);
 		blockPyroBomb = new BlockPyroBomb().setBlockName("PyroBomb").setCreativeTab(LRPGMain.tabLegendaryRPG);
-		blockGiantCake = new GiantCake().setBlockName("GiantCake").setCreativeTab(tabLegendaryRPG);
 
 		// Tool/Armor/Item Initialization
 		// Still working on this!!
@@ -207,8 +188,6 @@ public class LRPGMain {
 		GameRegistry.registerBlock(blockBooger, "BoogerBlock");
 		GameRegistry.registerBlock(blockPyroBomb, "PyroBomb");
 		GameRegistry.registerBlock(blockGiantCake, "GiantCake");
-		
-		GameRegistry.registerTileEntity(TileEntityGiantCake.class, "TileGiantCake");
 		
 		// Generation Registry
 		GameRegistry.registerWorldGenerator((IWorldGenerator) this.OreManager, 1);
@@ -261,17 +240,6 @@ public class LRPGMain {
 		GameRegistry.registerItem(itemWolfScroll, "WolfScroll");
 		GameRegistry.registerItem(itemSpawnpointScroll, "SpawnpointScroll");
 		GameRegistry.registerItem(itemRecallScroll, "RecallScroll");
-		
-		
-		
-		
-		
-		
-		Item itemSpawnEgg = new SpawnEggs("DireWolf", 0xE18519, 0x000000)
-			      .setUnlocalizedName("spawn_egg_"+"DireWolf".toLowerCase())
-			      .setTextureName("wildanimals:spawn_egg");
-			GameRegistry.registerItem(itemSpawnEgg, "spawnEgg"+"DireWolf");
-		
 	}
 
 
