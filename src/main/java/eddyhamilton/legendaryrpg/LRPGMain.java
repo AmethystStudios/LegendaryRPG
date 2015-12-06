@@ -85,7 +85,9 @@ public class LRPGMain {
 	public static Item itemCreeperBrain;
 	public static Item itemBlazeHeart;
 	public static Item itemPyroSuicideVest;
-	public static Item itemWolfScroll;
+	public static Item itemWolfScrollTier1;
+	public static Item itemWolfScrollTier2;
+	public static Item itemWolfScrollTier3;
 	public static Item itemSpawnpointScroll;
 	public static Item itemRecallScroll;
 	
@@ -176,7 +178,9 @@ public class LRPGMain {
 		itemSuicideDetonator = new WeaponSword("SuicideDetonator", SuicideMaterial2).setCreativeTab(CreativeTabs.tabCombat).setTextureName(MODID + ":SuicideDetonator");
 		itemCreeperBrain = new BasicItem("CreeperBrain", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
 		itemBlazeHeart = new BasicItem("BlazeHeart", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
-		itemWolfScroll = new WolfScroll("WolfScroll", "RELEASE THE DOGS! Currently WIP").setMaxStackSize(1);
+		itemWolfScrollTier1 = new WolfScrollTier1("WolfScroll1").setMaxStackSize(1);
+		itemWolfScrollTier2 = new WolfScrollTier2("WolfScroll2").setMaxStackSize(1);
+		itemWolfScrollTier3 = new WolfScrollTier3("WolfScroll3").setMaxStackSize(1);
 		itemSpawnpointScroll = new SpawnpointScroll("SpawnpointScroll", "Introducing Insta-Bed!").setMaxStackSize(1);
 		itemRecallScroll = new RecallScroll("RecallScroll", "").setMaxStackSize(1);
 
@@ -235,7 +239,9 @@ public class LRPGMain {
 		GameRegistry.registerItem(itemPyroSuicideVest, "PyroSuicideVest");
 		GameRegistry.registerItem(itemSuicideDetonator = new WeaponSword("SuicideDetonator", SuicideMaterial2),
 				"SuicideDetonator");
-		GameRegistry.registerItem(itemWolfScroll, "WolfScroll");
+		GameRegistry.registerItem(itemWolfScrollTier1, "WolfScroll1");
+		GameRegistry.registerItem(itemWolfScrollTier2, "WolfScroll2");
+		GameRegistry.registerItem(itemWolfScrollTier3, "WolfScroll3");
 		GameRegistry.registerItem(itemSpawnpointScroll, "SpawnpointScroll");
 		GameRegistry.registerItem(itemRecallScroll, "RecallScroll");
 	}

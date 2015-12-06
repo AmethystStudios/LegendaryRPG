@@ -25,21 +25,36 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
-public class WolfScroll extends Item {
+public class WolfScrollTier1 extends Item {
 
-	private final String setInfo;
 
-	public WolfScroll(String string, String string2) {
+
+	public WolfScrollTier1(String string) {
 		super();
 		this.setUnlocalizedName(string);
 		this.setTextureName(LRPGMain.MODID + ":" + string);
-		this.setInfo = string2;
-		;
+
 
 	}
+	
+	@Override
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4)
+	{
+	list.add("RELEASE THE DOGS! Currently WIP");
+	list.add("\u00A74Level 1");
+	list.add("\u00A722 Wolves");
+	
+	}
+	
 
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
+			int i = 1;
+			while(i < 3){
+			Random posXrand = new Random();
+			Random posZrand = new Random();
+			int posXoffset =  (posXrand.nextInt(5) - 3);
+			int posZoffset = (posZrand.nextInt(5) - 3);
 			EntityWolf entitywolf = new EntityWolf(player.worldObj);
 			entitywolf.func_152115_b(player.getUniqueID().toString());
 			entitywolf.setTamed(true);
@@ -48,8 +63,11 @@ public class WolfScroll extends Item {
 			entitywolf.setHealth(20.0F);
 			entitywolf.worldObj.setEntityState(entitywolf, (byte) 7);
 			entitywolf.setCollarColor(10);
-			entitywolf.setPositionAndUpdate(player.posX, player.posY, player.posZ);
+			entitywolf.setPositionAndUpdate(player.posX + posXoffset, player.posY, player.posZ + posZoffset);
 			player.worldObj.spawnEntityInWorld(entitywolf);
+			i++;
+			}
+			
 			player.destroyCurrentEquippedItem();
 			world.playSoundAtEntity(player, LRPGMain.MODID + ":wolfscroll", 1, 1);
 		}

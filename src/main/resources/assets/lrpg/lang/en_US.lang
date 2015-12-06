@@ -28,7 +28,9 @@ item.CreeperBrain.name=Creeper Brain
 item.BlazeHeart.name=Blaze Heart
 item.ConductiveWiring.name=Conductive Wiring
 item.PyroSuicideVest.name=Pyro Suicide Vest
-item.WolfScroll.name=Wolf Scroll
+item.WolfScroll1.name=Wolf Scroll [Lvl 1]
+item.WolfScroll2.name=Wolf Scroll [Lvl 2]
+item.WolfScroll3.name=Wolf Scroll [Lvl 3]
 item.SpawnpointScroll.name=Spawnpoint Scroll
 item.RecallScroll.name=Recall Scroll
 

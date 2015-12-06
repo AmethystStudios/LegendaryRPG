@@ -25,50 +25,51 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
-public class ClosedWolfScroll extends Item {
+public class WolfScrollTier3 extends Item {
 
-	private final String setInfo;
 
-	public ClosedWolfScroll(String string, String string2) {
+
+	public WolfScrollTier3(String string) {
 		super();
 		this.setUnlocalizedName(string);
 		this.setTextureName(LRPGMain.MODID + ":" + string);
-		this.setInfo = string2;
-		;
+	
 
 	}
+	
+	@Override
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4)
+	{
+	list.add("RELEASE THE DOGS! Currently WIP");
+	list.add("\u00A74Level 3");
+	list.add("\u00A7210 Wolves!");
+	
+	}
+	
 
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
-
-		}
-		Random random = new Random();
-		int ScrollTier = random.nextInt(11);
-		switch (ScrollTier){
-		case 0:
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-		case 5:
-			//tier1
+			int i = 1;
+			while(i < 11){
+			Random posXrand = new Random();
+			Random posZrand = new Random();
+			int posXoffset =  (posXrand.nextInt(5) - 3);
+			int posZoffset = (posZrand.nextInt(5) - 3);
+			EntityWolf entitywolf = new EntityWolf(player.worldObj);
+			entitywolf.func_152115_b(player.getUniqueID().toString());
+			entitywolf.setTamed(true);
+			entitywolf.setPathToEntity((PathEntity) null);
+			entitywolf.setAttackTarget((EntityLivingBase) null);
+			entitywolf.setHealth(20.0F);
+			entitywolf.worldObj.setEntityState(entitywolf, (byte) 7);
+			entitywolf.setCollarColor(10);
+			entitywolf.setPositionAndUpdate(player.posX + posXoffset, player.posY, player.posZ + posZoffset);
+			player.worldObj.spawnEntityInWorld(entitywolf);
+			i++;
+			}
 			
-		case 6:
-		case 7:
-		case 8:
-			//tier2
-			
-		case 9:
-			//tier3
-			
-		case 10:
-			//crumble
-			
-			break;
-			
-		
-		
-		
+			player.destroyCurrentEquippedItem();
+			world.playSoundAtEntity(player, LRPGMain.MODID + ":wolfscroll", 1, 1);
 		}
 
 		Random rand = new Random();
