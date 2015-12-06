@@ -24,17 +24,17 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import eddyhamilton.legendaryrpg.item.WolfScrollTier1;;
 
 public class ClosedWolfScroll extends Item {
 
-	private final String setInfo;
 
-	public ClosedWolfScroll(String string, String string2) {
+
+	public ClosedWolfScroll(String string) {
 		super();
 		this.setUnlocalizedName(string);
 		this.setTextureName(LRPGMain.MODID + ":" + string);
-		this.setInfo = string2;
-		;
+
 
 	}
 
@@ -51,35 +51,60 @@ public class ClosedWolfScroll extends Item {
 		case 3:
 		case 4:
 		case 5:
-			//tier1
-			
+			player.inventory.addItemStackToInventory(new ItemStack(LRPGMain.itemWolfScrollTier1, 1));
+			Random rand = new Random();
+			for (int countparticles = 0; countparticles <= 20; ++countparticles) {
+				world.spawnParticle("explode", player.posX + (rand.nextDouble() - 0.5D) * (double) player.width,
+						player.posY + rand.nextDouble() * (double) player.height
+								- (double) player.yOffset,
+						player.posZ + (rand.nextDouble() - 0.5D) * (double) player.width, 0.0D, 0.0D,
+						0.0D);
+			}
+			break;
 		case 6:
 		case 7:
 		case 8:
-			//tier2
-			
-		case 9:
-			//tier3
-			
-		case 10:
-			//crumble
-			
+			player.inventory.addItemStackToInventory(new ItemStack(LRPGMain.itemWolfScrollTier2, 1));
+			Random rand1 = new Random();
+			for (int countparticles = 0; countparticles <= 20; ++countparticles) {
+				world.spawnParticle("explode", player.posX + (rand1.nextDouble() - 0.5D) * (double) player.width,
+						player.posY + rand1.nextDouble() * (double) player.height
+								- (double) player.yOffset,
+						player.posZ + (rand1.nextDouble() - 0.5D) * (double) player.width, 0.0D, 0.0D,
+						0.0D);
+			}
 			break;
+		case 9:
+			player.inventory.addItemStackToInventory(new ItemStack(LRPGMain.itemWolfScrollTier3, 1));
+			Random rand2 = new Random();
+			for (int countparticles = 0; countparticles <= 20; ++countparticles) {
+				world.spawnParticle("explode", player.posX + (rand2.nextDouble() - 0.5D) * (double) player.width,
+						player.posY + rand2.nextDouble() * (double) player.height
+								- (double) player.yOffset,
+						player.posZ + (rand2.nextDouble() - 0.5D) * (double) player.width, 0.0D, 0.0D,
+						0.0D);
+			}
+			break;
+		case 10:			
+			Random rand3 = new Random();
+			for (int countparticles = 0; countparticles <= 20; ++countparticles) {
+				world.spawnParticle("flame", player.posX + (rand3.nextDouble() - 0.5D) * (double) player.width,
+						player.posY + rand3.nextDouble() * (double) player.height
+								- (double) player.yOffset,
+						player.posZ + (rand3.nextDouble() - 0.5D) * (double) player.width, 0.0D, 0.0D,
+						0.0D);
+			}
+			break;
+		default:
+			break;
+
+		}
+		player.inventory.consumeInventoryItem(LRPGMain.itemClosedWolfScroll);	
 			
 		
-		
-		
-		}
 
-		Random rand = new Random();
-		for (int countparticles = 0; countparticles <= 20; ++countparticles) {
-			world.spawnParticle("explode", player.posX + (rand.nextDouble() - 0.5D) * (double) player.width,
-					player.posY + rand.nextDouble() * (double) player.height
-							- (double) player.yOffset,
-					player.posZ + (rand.nextDouble() - 0.5D) * (double) player.width, 0.0D, 0.0D,
-					0.0D);
-		}
 		return itemstack;
+
 	}
 
 	@Override

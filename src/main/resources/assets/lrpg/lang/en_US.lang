@@ -33,6 +33,7 @@ item.WolfScroll2.name=Wolf Scroll [Lvl 2]
 item.WolfScroll3.name=Wolf Scroll [Lvl 3]
 item.SpawnpointScroll.name=Spawnpoint Scroll
 item.RecallScroll.name=Recall Scroll
+item.ClosedWolfScroll.name=Sealed Wolf Scroll
 
 Blocks
 

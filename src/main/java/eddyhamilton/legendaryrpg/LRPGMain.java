@@ -90,6 +90,7 @@ public class LRPGMain {
 	public static Item itemWolfScrollTier3;
 	public static Item itemSpawnpointScroll;
 	public static Item itemRecallScroll;
+	public static Item itemClosedWolfScroll;
 	
 	// Block
 	public static BlockChest blockInfiniumChest;
@@ -183,6 +184,7 @@ public class LRPGMain {
 		itemWolfScrollTier3 = new WolfScrollTier3("WolfScroll3").setMaxStackSize(1);
 		itemSpawnpointScroll = new SpawnpointScroll("SpawnpointScroll", "Introducing Insta-Bed!").setMaxStackSize(1);
 		itemRecallScroll = new RecallScroll("RecallScroll", "").setMaxStackSize(1);
+		itemClosedWolfScroll = new ClosedWolfScroll("ClosedWolfScroll");
 
 		
 		// Block Registry
@@ -244,6 +246,7 @@ public class LRPGMain {
 		GameRegistry.registerItem(itemWolfScrollTier3, "WolfScroll3");
 		GameRegistry.registerItem(itemSpawnpointScroll, "SpawnpointScroll");
 		GameRegistry.registerItem(itemRecallScroll, "RecallScroll");
+		GameRegistry.registerItem(itemClosedWolfScroll, "ClosedWolfScroll");
 	}
 
 
