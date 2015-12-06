@@ -295,8 +295,7 @@ public class LRPGMain {
 		GameRegistry.addShapelessRecipe(new ItemStack(LRPGMain.itemCheese, 4), new Object[] { Items.milk_bucket,
 				Items.milk_bucket, Items.milk_bucket, Items.milk_bucket, LRPGMain.itemRennet });
 
-		// Smelting Registry
-
+		// Smelting Recipes
 		GameRegistry.addSmelting(blockInfiniumOre, new ItemStack(itemInfiniumNugget, 1), 100.0F);
 
 		
