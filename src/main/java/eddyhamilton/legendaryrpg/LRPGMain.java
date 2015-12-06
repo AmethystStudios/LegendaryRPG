@@ -315,6 +315,7 @@ public class LRPGMain {
 
 	@EventHandler
 	public void postinit(FMLPostInitializationEvent event) {
+		
 		// could get a list of blocks from every mod, as ALL items/blocks have
 		// been registered by the time you hit postinit
 
