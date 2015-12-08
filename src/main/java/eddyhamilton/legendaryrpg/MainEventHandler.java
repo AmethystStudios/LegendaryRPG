@@ -1,12 +1,15 @@
 package eddyhamilton.legendaryrpg;
 
+import java.util.Timer;
 import java.util.TimerTask;
 
 import com.oracle.jrockit.jfr.TimedEvent;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
+import eddyhamilton.legendaryrpg.enchantment.EnchantmentLifeoftheGreatTree;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,20 +26,11 @@ import net.minecraftforge.event.world.WorldEvent;
 public class MainEventHandler {
 	
 	@SubscribeEvent
-	public void lotgtEnchantmentCheck(cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent event){
-		EntityPlayer player = Minecraft.getMinecraft().thePlayer;
+	public void lotgtEnchantmentCheck(PlayerLoggedInEvent event){
+		EntityPlayer player = event.player;
+		EnchantmentLifeoftheGreatTree.EnchantChecker1(player);
+		
 
-		for(int i =0;i<9;i++){
-			ItemStack stack = player.inventory.getStackInSlot(i);
-    	if (stack != null && EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId, stack) > 0){
-    		player.addPotionEffect(new PotionEffect(Potion.jump.id, 3000000, 3));
-    		player.addChatMessage(
-					new ChatComponentText(EnumChatFormatting.ITALIC + "You can repair your item here.."));
-    		stack.setItemDamage(stack.getItemDamage()+100000);
-    		player.addChatMessage(
-					new ChatComponentText(EnumChatFormatting.ITALIC + "5 second delay?"));
-    	}
-		}
 	}
 
 }
