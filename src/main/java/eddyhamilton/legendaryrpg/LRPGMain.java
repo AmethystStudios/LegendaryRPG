@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -20,6 +21,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 import java.util.Random;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -34,6 +36,8 @@ import eddyhamilton.legendaryrpg.block.BasicBlock;
 import eddyhamilton.legendaryrpg.block.BlockBooger;
 import eddyhamilton.legendaryrpg.block.BlockInfiniumOre;
 import eddyhamilton.legendaryrpg.block.BlockPyroBomb;
+import eddyhamilton.legendaryrpg.enchantment.EnchantmentBlazing;
+import eddyhamilton.legendaryrpg.enchantment.EnchantmentLifeoftheGreatTree;
 import eddyhamilton.legendaryrpg.item.*;
 import eddyhamilton.legendaryrpg.worldgen.OreGenerator2;
 
@@ -55,6 +59,12 @@ public class LRPGMain {
 	public static final String NAME = "LegendaryRPG";
 	public static final String VERSION = "0.8.2.2";
 
+	
+	public static final Enchantment Blazing = new EnchantmentBlazing(84, 1);
+	public static final Enchantment LifeoftheGreatTree = new EnchantmentLifeoftheGreatTree(85, 1);
+	
+	MainEventHandler handler = new MainEventHandler();
+	
 	// Items, Tools, Armor
 	public static Item itemBooger;
 	public static Item itemObsidianCarrot;
@@ -139,8 +149,10 @@ public class LRPGMain {
 	// PreInit. Registers, Recipes, Configs,etc, go here.
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-
-
+		
+		
+		FMLCommonHandler.instance().bus().register(handler);
+		MinecraftForge.EVENT_BUS.register(handler);
 		
 		// Block Initialization
 		blockBooger = new BlockBooger(Material.web).setBlockName("BlockBooger");
@@ -192,6 +204,8 @@ public class LRPGMain {
 		GameRegistry.registerBlock(blockInfiniumBlock, "InfiniumBlock");
 		GameRegistry.registerBlock(blockBooger, "BoogerBlock");
 		GameRegistry.registerBlock(blockPyroBomb, "PyroBomb");
+		
+
 		
 		// Generation Registry
 		GameRegistry.registerWorldGenerator((IWorldGenerator) this.OreManager, 1);

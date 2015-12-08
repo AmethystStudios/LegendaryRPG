@@ -50,4 +50,8 @@ DamageSources
 death.attack.lrpg.SuicideDamage=%s commited suicide with a explosive vest!
 death.attack.lrpg.SuicideDamage.player=%1$s was blown up with a explosive vest by %2$s! 
 
+Enchantments
+enchantment.Blazing=Blazing
+enchantment.LifeoftheGreatTree=Life of the Great Tree
+
 
