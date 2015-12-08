@@ -32,16 +32,9 @@ public class MainEventHandler {
     		player.addPotionEffect(new PotionEffect(Potion.jump.id, 3000000, 3));
     		player.addChatMessage(
 					new ChatComponentText(EnumChatFormatting.ITALIC + "You can repair your item here.."));
-    		int counter =100;
-    		counter--;
-    		if(counter == 0){
-        		stack.setItemDamage(stack.getItemDamage()+100000);
-        		player.addChatMessage(
-    					new ChatComponentText(EnumChatFormatting.ITALIC + "5 second delay?"));
-
-    		counter=20;
-    		}
-
+    		stack.setItemDamage(stack.getItemDamage()+100000);
+    		player.addChatMessage(
+					new ChatComponentText(EnumChatFormatting.ITALIC + "5 second delay?"));
     	}
 		}
 	}
