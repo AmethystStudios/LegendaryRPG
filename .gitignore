@@ -1,0 +1,25 @@
+.gradle/
+.settings/
+bin/
+build/
+gradle/
+build.gradle
+gradlew
+gradlew.bat
+eclipse/
+.project
+CREDITS-fml.txt
+forge-1.7.10-10.13.2.1291-src.zip
+forge-1.7.10-10.13.2.1291-changelog.txt
+LICENSE-fml.txt
+MinecraftForge-Credits.txt
+MinecraftForge-License.txt
+README.txt
+.classpath
+
+# Ignore Gradle GUI config
+#gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+#!gradle-wrapper.jar
+#/bin/
