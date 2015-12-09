@@ -24,13 +24,10 @@ public class EnchantmentLifeoftheGreatTree extends Enchantment {
 	public boolean canApplyAtEnchantingTable() {
 		return false;
 	}
-	private ScheduledExecutorService Scheduler;
-	void EnchantChecker2(EntityPlayer player, ItemStack stack){
-	Scheduler = Executors.newScheduledThreadPool(1);
-	
-	}
 
-	public static void EnchantChecker1(final EntityPlayer player) {
+	public static EntityPlayer player;
+
+	public static void EnchantChecker1() {
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 			@Override
@@ -53,82 +50,76 @@ public class EnchantmentLifeoftheGreatTree extends Enchantment {
 						}
 
 					}
-					ItemStack Chestplate = player.inventory.armorItemInSlot(1);
+				}
+					ItemStack Helmet = player.inventory.armorItemInSlot(0);
 					if (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId,
-							player.inventory.armorItemInSlot(0)) > 0) {
+							Helmet) > 0) {
 						switch (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId,
-								player.inventory.armorItemInSlot(0))) {
+								Helmet)) {
 						case 1:
-							stack = player.inventory.armorItemInSlot(0);
-							lotgtLvl1(stack, player);
+							lotgtLvl1(Helmet, player);
 							break;
 						case 2:
-							stack = player.inventory.armorItemInSlot(0);
-							lotgtLvl2(stack, player);
+							
+							lotgtLvl2(Helmet, player);
 							break;
 						case 3:
-							stack = player.inventory.armorItemInSlot(0);
-							lotgtLvl3(stack, player);
+							Helmet = player.inventory.armorItemInSlot(0);
+							lotgtLvl3(Helmet, player);
 							break;
 						}
 					}
+					ItemStack Chestplate = player.inventory.armorItemInSlot(1);
 					if (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId, Chestplate) > 0) {
 						switch (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId,
-								player.inventory.armorItemInSlot(1))) {
+								Chestplate)) {
 						case 1:
-							stack = Chestplate;
-							lotgtLvl1(stack, player);
+							lotgtLvl1(Chestplate, player);
 							break;
 						case 2:
-							stack = player.inventory.armorItemInSlot(1);
-							lotgtLvl2(stack, player);
+							lotgtLvl2(Chestplate, player);
 							break;
 						case 3:
-							stack = player.inventory.armorItemInSlot(1);
-							lotgtLvl3(stack, player);
+							lotgtLvl3(Chestplate, player);
 							break;
 						}
 
 					}
+					ItemStack Leggings = player.getCurrentArmor(2);
 					if (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId,
-							player.inventory.armorItemInSlot(2)) > 0) {
+							Leggings) > 0) {
 						switch (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId,
-								player.inventory.armorItemInSlot(2))) {
+								Leggings)) {
 						case 1:
-							stack = player.inventory.armorItemInSlot(2);
-							lotgtLvl1(stack, player);
+							lotgtLvl1(Leggings, player);
 							break;
 						case 2:
-							stack = player.inventory.armorItemInSlot(2);
-							lotgtLvl2(stack, player);
+							lotgtLvl2(Leggings, player);
 							break;
 						case 3:
-							stack = player.inventory.armorItemInSlot(2);
-							lotgtLvl3(stack, player);
+							lotgtLvl3(Leggings, player);
 							break;
 						}
 					}
+					ItemStack Boots = player.getCurrentArmor(3);
 					if (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId,
-							player.inventory.armorItemInSlot(3)) > 0) {
+							Boots) > 0) {
 						switch (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId,
-								player.inventory.armorItemInSlot(3))) {
+								Boots)) {
 						case 1:
-							stack = player.inventory.armorItemInSlot(3);
-							lotgtLvl1(stack, player);
+							lotgtLvl1(Boots, player);
 							break;
 						case 2:
-							stack = player.inventory.armorItemInSlot(3);
-							lotgtLvl2(stack, player);
+							lotgtLvl2(Boots, player);
 							break;
 						case 3:
-							stack = player.inventory.armorItemInSlot(3);
-							lotgtLvl3(stack, player);
+							lotgtLvl3(Boots, player);
 							break;
 						}
 
 					}
 
-				}
+				
 
 			}
 		}, 5000, 5000);

@@ -29,9 +29,12 @@ public class MainEventHandler {
 	@SubscribeEvent
 	public void lotgtEnchantmentCheck(PlayerLoggedInEvent event){
 		EntityPlayer player = event.player;
-		EnchantmentLifeoftheGreatTree.EnchantChecker1(player);
-		
-
+		EnchantmentLifeoftheGreatTree.player = player;
+		EnchantmentLifeoftheGreatTree.EnchantChecker1();
 	}
-
+	@SubscribeEvent
+	public void onDeath(PlayerEvent.Clone event){
+		EntityPlayer player = event.entityPlayer;
+		EnchantmentLifeoftheGreatTree.player = player;
+	}
 }
