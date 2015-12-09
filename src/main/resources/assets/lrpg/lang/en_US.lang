@@ -27,6 +27,13 @@ item.SuicideDetonator.name=Suicide Detonator
 item.CreeperBrain.name=Creeper Brain
 item.BlazeHeart.name=Blaze Heart
 item.ConductiveWiring.name=Conductive Wiring
+item.PyroSuicideVest.name=Pyro Suicide Vest
+item.WolfScroll1.name=Wolf Scroll [Lvl 1]
+item.WolfScroll2.name=Wolf Scroll [Lvl 2]
+item.WolfScroll3.name=Wolf Scroll [Lvl 3]
+item.SpawnpointScroll.name=Spawnpoint Scroll
+item.RecallScroll.name=Recall Scroll
+item.ClosedWolfScroll.name=Sealed Wolf Scroll
 
 Blocks
 
@@ -34,6 +41,7 @@ tile.InfiniumOre.name=Infinium Ore
 tile.BlockBooger.name=Booger Block
 tile.InfiniumBlock.name=Infinium Block
 tile.PyroBomb.name=PyroBomb-Less WIP than before
+tile.GiantCake.name=Birthday Cake
 
 Creative Tabs
 itemGroup.tabLegendaryRPG=LegendaryRPG
@@ -41,3 +49,9 @@ itemGroup.tabLegendaryRPG=LegendaryRPG
 DamageSources
 death.attack.lrpg.SuicideDamage=%s commited suicide with a explosive vest!
 death.attack.lrpg.SuicideDamage.player=%1$s was blown up with a explosive vest by %2$s! 
+
+Enchantments
+enchantment.Blazing=Blazing
+enchantment.LifeoftheGreatTree=Life of the Great Tree
+
+

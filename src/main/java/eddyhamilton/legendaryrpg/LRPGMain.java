@@ -1,9 +1,12 @@
 package eddyhamilton.legendaryrpg;
-//hi
+//hi!!!!
+
+//starting to get bigtime irritated
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -18,6 +21,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 import java.util.Random;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -26,11 +30,14 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import eddyhamilton.legendaryrpg.block.BasicBlock;
 import eddyhamilton.legendaryrpg.block.BlockBooger;
 import eddyhamilton.legendaryrpg.block.BlockInfiniumOre;
 import eddyhamilton.legendaryrpg.block.BlockPyroBomb;
+import eddyhamilton.legendaryrpg.enchantment.EnchantmentBlazing;
+import eddyhamilton.legendaryrpg.enchantment.EnchantmentLifeoftheGreatTree;
 import eddyhamilton.legendaryrpg.item.*;
 import eddyhamilton.legendaryrpg.worldgen.OreGenerator2;
 
@@ -38,7 +45,8 @@ import eddyhamilton.legendaryrpg.worldgen.OreGenerator2;
 public class LRPGMain {
 	@SidedProxy(clientSide = "eddyhamilton.legendaryrpg.ClientProxy", serverSide = "eddyhamilton.legendaryrpg.ServerProxy")
 	public static ServerProxy proxy;
-
+// pretending I made Major Changes
+	
 	// Creative Tabs, fussy things. Use this template if you ever need to make
 	// another.
 	public static CreativeTabs tabLegendaryRPG = new CreativeTabs("tabLegendaryRPG") {
@@ -49,16 +57,17 @@ public class LRPGMain {
 
 	public static final String MODID = "lrpg";
 	public static final String NAME = "LegendaryRPG";
-	public static final String VERSION = "1.0";
+	public static final String VERSION = "0.8.2.2";
 
+	
+	public static final Enchantment Blazing = new EnchantmentBlazing(84, 1);
+	public static final Enchantment LifeoftheGreatTree = new EnchantmentLifeoftheGreatTree(85, 1);
+	
+	MainEventHandler handler = new MainEventHandler();
+	
 	// Items, Tools, Armor
 	public static Item itemBooger;
 	public static Item itemObsidianCarrot;
-
-	/*
-	 * = new AdvancedFood("ItemBooger", 5, 0.8F, false
-	 * ).setUnlocalizedName("ItemBooger").setCreativeTab ( tabLegendaryRPG);
-	 */
 	public static Item itemInfiniumHelmet;
 	public static Item itemInfiniumChestplate;
 	public static Item itemInfiniumLegs;
@@ -85,6 +94,14 @@ public class LRPGMain {
 	public static Item itemConductiveWiring;
 	public static Item itemCreeperBrain;
 	public static Item itemBlazeHeart;
+	public static Item itemPyroSuicideVest;
+	public static Item itemWolfScrollTier1;
+	public static Item itemWolfScrollTier2;
+	public static Item itemWolfScrollTier3;
+	public static Item itemSpawnpointScroll;
+	public static Item itemRecallScroll;
+	public static Item itemClosedWolfScroll;
+	
 	// Block
 	public static BlockChest blockInfiniumChest;
 	public static Block blockInfiniumBlock;
@@ -128,12 +145,14 @@ public class LRPGMain {
 		this.OreManager = new OreGenerator2();
 	}
 
+
 	// PreInit. Registers, Recipes, Configs,etc, go here.
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-
 		
-
+		
+		FMLCommonHandler.instance().bus().register(handler);
+		MinecraftForge.EVENT_BUS.register(handler);
 		
 		// Block Initialization
 		blockBooger = new BlockBooger(Material.web).setBlockName("BlockBooger");
@@ -143,39 +162,50 @@ public class LRPGMain {
 
 		// Tool/Armor/Item Initialization
 		// Still working on this!!
+		
+		itemPyroSuicideVest = new ItemPyroSuicideVest(SuicideMaterial, 0, 1).setUnlocalizedName("PyroSuicideVest")
+				.setTextureName(MODID + ":PyroSuicideVest");
 		itemSuicideVest = new ItemSuicideVest(SuicideMaterial, 0, 1).setUnlocalizedName("SuicideVest")
-				.setTextureName(MODID + ":SuicideVest").setCreativeTab(CreativeTabs.tabCombat);
+				.setTextureName(MODID + ":SuicideVest");
 		itemInfiniumHelmet = new ItemInfiniumArmor(InfiniumArmor, 0, 0).setUnlocalizedName("InfiniumHelmet")
-				.setTextureName("lrpg:InfiniumHelmet").setCreativeTab(CreativeTabs.tabCombat);
+				.setTextureName(MODID + ":InfiniumHelmet").setCreativeTab(CreativeTabs.tabCombat);
 		itemInfiniumChestplate = new ItemInfiniumArmor(InfiniumArmor, 0, 1).setUnlocalizedName("InfiniumChest")
-				.setTextureName("lrpg:InfiniumChestplate").setCreativeTab(CreativeTabs.tabCombat);
+				.setTextureName(MODID + ":InfiniumChestplate").setCreativeTab(CreativeTabs.tabCombat);
 		itemInfiniumLegs = new ItemInfiniumArmor(InfiniumArmor, 0, 2).setUnlocalizedName("InfiniumLegs")
-				.setTextureName("lrpg:InfiniumLegs").setCreativeTab(CreativeTabs.tabCombat);
+				.setTextureName(MODID + ":InfiniumLegs").setCreativeTab(CreativeTabs.tabCombat);
 		itemInfiniumBoots = new ItemInfiniumArmor(InfiniumArmor2, 0, 3).setUnlocalizedName("InfiniumBoots")
-				.setTextureName("lrpg:InfiniumBoots").setCreativeTab(CreativeTabs.tabCombat);
+				.setTextureName(MODID + ":InfiniumBoots").setCreativeTab(CreativeTabs.tabCombat);
 		itemGodArmorHelmet = new GodArmor(GodArmor, 0, 0).setUnlocalizedName("GodHelmet")
-				.setTextureName("lrpg:GodHelmet").setCreativeTab(tabLegendaryRPG);
+				.setTextureName(MODID + ":GodHelmet").setCreativeTab(tabLegendaryRPG);
 		itemGodArmorChestplate = new GodArmor(GodArmor, 0, 1).setUnlocalizedName("GodChestplate")
-				.setTextureName("lrpg:GodChestplate").setCreativeTab(tabLegendaryRPG);
+				.setTextureName(MODID + ":GodChestplate").setCreativeTab(tabLegendaryRPG);
 		itemGodArmorLeggings = new GodArmor(GodArmor, 0, 2).setUnlocalizedName("GodLeggings")
-				.setTextureName("lrpg:GodLeggins").setCreativeTab(tabLegendaryRPG);
+				.setTextureName(MODID + ":GodLeggins").setCreativeTab(tabLegendaryRPG);
 		itemGodArmorBoots = new GodArmor(GodArmor, 0, 3).setUnlocalizedName("GodBoots").setTextureName("lrpg:GodBoots")
 				.setCreativeTab(tabLegendaryRPG);
 		itemOpSpeedBoots = new OpSpeedBoots(OpSpeedBoots, 0, 3).setUnlocalizedName("OpSpeedBoots")
-				.setTextureName("lrpg:BootsofSwiftness").setCreativeTab(tabLegendaryRPG);
+				.setTextureName(MODID + ":BootsofSwiftness").setCreativeTab(tabLegendaryRPG);
 		itemRennet = new BasicItem("Rennet", "I can use this to make cheese!").setMaxStackSize(32).setCreativeTab(CreativeTabs.tabMaterials);
 		itemConductiveWiring = new BasicItem("ConductiveWiring", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
 		itemCheese = new AdvancedFood("Cheese", 3, 0.5F, false);
 		itemSuicideDetonator = new WeaponSword("SuicideDetonator", SuicideMaterial2).setCreativeTab(CreativeTabs.tabCombat).setTextureName(MODID + ":SuicideDetonator");
 		itemCreeperBrain = new BasicItem("CreeperBrain", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
 		itemBlazeHeart = new BasicItem("BlazeHeart", "").setMaxStackSize(64).setCreativeTab(CreativeTabs.tabMaterials);
-		
+		itemWolfScrollTier1 = new WolfScrollTier1("WolfScroll1").setMaxStackSize(1);
+		itemWolfScrollTier2 = new WolfScrollTier2("WolfScroll2").setMaxStackSize(1);
+		itemWolfScrollTier3 = new WolfScrollTier3("WolfScroll3").setMaxStackSize(1);
+		itemSpawnpointScroll = new SpawnpointScroll("SpawnpointScroll", "Introducing Insta-Bed!").setMaxStackSize(1);
+		itemRecallScroll = new RecallScroll("RecallScroll", "").setMaxStackSize(1);
+		itemClosedWolfScroll = new ClosedWolfScroll("ClosedWolfScroll");
+
 		
 		// Block Registry
 		GameRegistry.registerBlock(blockInfiniumOre, "InfiniumOre");
 		GameRegistry.registerBlock(blockInfiniumBlock, "InfiniumBlock");
 		GameRegistry.registerBlock(blockBooger, "BoogerBlock");
 		GameRegistry.registerBlock(blockPyroBomb, "PyroBomb");
+		
+
 		
 		// Generation Registry
 		GameRegistry.registerWorldGenerator((IWorldGenerator) this.OreManager, 1);
@@ -222,11 +252,18 @@ public class LRPGMain {
 		GameRegistry.registerItem(itemRennet, "Rennet");
 		GameRegistry.registerItem(itemCheese, "Cheese");
 		GameRegistry.registerItem(itemSuicideVest, "SuicideVest");
+		GameRegistry.registerItem(itemPyroSuicideVest, "PyroSuicideVest");
 		GameRegistry.registerItem(itemSuicideDetonator = new WeaponSword("SuicideDetonator", SuicideMaterial2),
 				"SuicideDetonator");
-		
-		
+		GameRegistry.registerItem(itemWolfScrollTier1, "WolfScroll1");
+		GameRegistry.registerItem(itemWolfScrollTier2, "WolfScroll2");
+		GameRegistry.registerItem(itemWolfScrollTier3, "WolfScroll3");
+		GameRegistry.registerItem(itemSpawnpointScroll, "SpawnpointScroll");
+		GameRegistry.registerItem(itemRecallScroll, "RecallScroll");
+		GameRegistry.registerItem(itemClosedWolfScroll, "ClosedWolfScroll");
 	}
+
+
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
@@ -266,7 +303,6 @@ public class LRPGMain {
 				new Object[] { "RRR", "RRR", "RRR", 'R', itemRefinedInfiniumIngot });
 		GameRegistry.addRecipe(new ItemStack(blockBooger), new Object[] { "RRR", "RRR", "RRR", 'R', itemBooger });
 		
-		
 		//Shapeless Recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(LRPGMain.itemBooger, 9), new Object[] { LRPGMain.blockBooger });
 		GameRegistry.addShapelessRecipe(new ItemStack(LRPGMain.itemRefinedInfiniumIngot, 9),
@@ -282,16 +318,18 @@ public class LRPGMain {
 		GameRegistry.addShapelessRecipe(new ItemStack(LRPGMain.itemCheese, 4), new Object[] { Items.milk_bucket,
 				Items.milk_bucket, Items.milk_bucket, Items.milk_bucket, LRPGMain.itemRennet });
 
-		// Smelting Registry
-
+		// Smelting Recipes
 		GameRegistry.addSmelting(blockInfiniumOre, new ItemStack(itemInfiniumNugget, 1), 100.0F);
 
 		
+		//Not really sure what to classify this under.
+		proxy.registerRenderThings();
 		
 	}
 
 	@EventHandler
 	public void postinit(FMLPostInitializationEvent event) {
+		
 		// could get a list of blocks from every mod, as ALL items/blocks have
 		// been registered by the time you hit postinit
 
