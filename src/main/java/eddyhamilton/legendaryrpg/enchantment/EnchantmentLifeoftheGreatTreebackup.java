@@ -14,9 +14,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 
-public class EnchantmentLifeoftheGreatTree extends Enchantment {
+public class EnchantmentLifeoftheGreatTreebackup extends Enchantment {
 
-	public EnchantmentLifeoftheGreatTree(int p_i1937_1_, int p_i1937_2_) {
+	public EnchantmentLifeoftheGreatTreebackup(int p_i1937_1_, int p_i1937_2_) {
 		super(p_i1937_1_, p_i1937_2_, EnumEnchantmentType.all);
 		this.setName("LifeoftheGreatTree");
 	}
@@ -43,13 +43,10 @@ public class EnchantmentLifeoftheGreatTree extends Enchantment {
 						switch (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId, stack)) {
 						case 1:
 							lotgtLvl1(stack, player);
-							break;
 						case 2:
 							lotgtLvl2(stack, player);
-							break;
 						case 3:
 							lotgtLvl3(stack, player);
-							break;
 						}
 
 					}
@@ -61,15 +58,12 @@ public class EnchantmentLifeoftheGreatTree extends Enchantment {
 						case 1:
 							stack = player.inventory.armorItemInSlot(0);
 							lotgtLvl1(stack, player);
-							break;
 						case 2:
 							stack = player.inventory.armorItemInSlot(0);
 							lotgtLvl2(stack, player);
-							break;
 						case 3:
 							stack = player.inventory.armorItemInSlot(0);
 							lotgtLvl3(stack, player);
-							break;
 						}
 					}
 					if (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId, Chestplate) > 0) {
@@ -78,15 +72,12 @@ public class EnchantmentLifeoftheGreatTree extends Enchantment {
 						case 1:
 							stack = Chestplate;
 							lotgtLvl1(stack, player);
-							break;
 						case 2:
 							stack = player.inventory.armorItemInSlot(1);
 							lotgtLvl2(stack, player);
-							break;
 						case 3:
 							stack = player.inventory.armorItemInSlot(1);
 							lotgtLvl3(stack, player);
-							break;
 						}
 
 					}
@@ -97,15 +88,12 @@ public class EnchantmentLifeoftheGreatTree extends Enchantment {
 						case 1:
 							stack = player.inventory.armorItemInSlot(2);
 							lotgtLvl1(stack, player);
-							break;
 						case 2:
 							stack = player.inventory.armorItemInSlot(2);
 							lotgtLvl2(stack, player);
-							break;
 						case 3:
 							stack = player.inventory.armorItemInSlot(2);
 							lotgtLvl3(stack, player);
-							break;
 						}
 					}
 					if (EnchantmentHelper.getEnchantmentLevel(LRPGMain.LifeoftheGreatTree.effectId,
@@ -115,15 +103,12 @@ public class EnchantmentLifeoftheGreatTree extends Enchantment {
 						case 1:
 							stack = player.inventory.armorItemInSlot(3);
 							lotgtLvl1(stack, player);
-							break;
 						case 2:
 							stack = player.inventory.armorItemInSlot(3);
 							lotgtLvl2(stack, player);
-							break;
 						case 3:
 							stack = player.inventory.armorItemInSlot(3);
 							lotgtLvl3(stack, player);
-							break;
 						}
 
 					}
