@@ -16,13 +16,18 @@ import net.minecraft.util.EnumChatFormatting;
 
 public class EnchantmentLifeoftheGreatTree extends Enchantment {
 
-	public EnchantmentLifeoftheGreatTree(int p_i1937_1_, int p_i1937_2_) {
-		super(p_i1937_1_, p_i1937_2_, EnumEnchantmentType.all);
+	public EnchantmentLifeoftheGreatTree(int EnchantmentID, int Rarity) {
+		super(EnchantmentID, Rarity, EnumEnchantmentType.all);
 		this.setName("LifeoftheGreatTree");
 	}
 
 	public boolean canApplyAtEnchantingTable() {
 		return false;
+	}
+	
+	public int getMaxLevel(){
+		return 3;
+		
 	}
 
 	public static EntityPlayer player;
@@ -122,39 +127,22 @@ public class EnchantmentLifeoftheGreatTree extends Enchantment {
 				
 
 			}
-		}, 5000, 5000);
+		}, 5000, 25000);
 	}
 
 	public static void lotgtLvl1(final ItemStack stack, final EntityPlayer player) {
-		Timer timer = new Timer();
-		timer.schedule(new TimerTask() {
-			@Override
-			public void run() {
-				stack.setItemDamage(stack.getItemDamage() - 10000000);
-				player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "5 second delay?"));
-			}
-		}, 5000);
-
+				stack.setItemDamage(stack.getItemDamage() - 10);
+				player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "20 second delay? Level 1"));
 	}
 
-	public static void lotgtLvl2(ItemStack stack, EntityPlayer player) {
-		Timer timer = new Timer();
-		timer.schedule(new TimerTask() {
-			@Override
-			public void run() {
-			}
-		}, 5000);
-
+	public static void lotgtLvl2(final ItemStack stack, final EntityPlayer player) {
+				stack.setItemDamage(stack.getItemDamage() - 30);
+				player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "15 second delay? Level 2"));
 	}
 
-	public static void lotgtLvl3(ItemStack stack, EntityPlayer player) {
-		Timer timer = new Timer();
-		timer.schedule(new TimerTask() {
-			@Override
-			public void run() {
-			}
-		}, 5000);
-
+	public static void lotgtLvl3(final ItemStack stack, final EntityPlayer player) {
+				stack.setItemDamage(stack.getItemDamage() - 50);
+				player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "10 second delay? Level 3"));
 	}
 
 }

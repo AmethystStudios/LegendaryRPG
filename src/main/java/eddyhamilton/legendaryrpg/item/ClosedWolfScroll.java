@@ -96,6 +96,7 @@ public class ClosedWolfScroll extends Item {
 				}
 				break;
 			case 10:
+			case 11:
 				player.addChatMessage(new ChatComponentText(
 						EnumChatFormatting.ITALIC + "When you try to open the scroll, it crumbles to dust."));
 				Random rand3 = new Random();

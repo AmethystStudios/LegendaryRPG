@@ -21,7 +21,7 @@ public class DropHandler {
 	
 	private void dropItem(int[] chance, LivingDropsEvent event, int amount, Item item)
 	{
-	   int rand = random.nextInt(100);
+	   int rand = random.nextInt(100) + 1;
 	   for(int val : chance)
 	      if(val == rand)
 	        event.entityLiving.dropItem(item, amount);
