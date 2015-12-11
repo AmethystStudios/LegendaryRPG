@@ -1,5 +1,4 @@
 Items
-
 item.Booger.name=Booger
 item.InfiniumHelmet.name=Infinium Helmet
 item.InfiniumChest.name=Infinium Chestplate
@@ -34,9 +33,9 @@ item.WolfScroll3.name=Wolf Scroll [Lvl 3]
 item.SpawnpointScroll.name=Spawnpoint Scroll
 item.RecallScroll.name=Recall Scroll
 item.ClosedWolfScroll.name=Sealed Wolf Scroll
+item.LightningWand.name=Lightning Wand
 
 Blocks
-
 tile.InfiniumOre.name=Infinium Ore
 tile.BlockBooger.name=Booger Block
 tile.InfiniumBlock.name=Infinium Block

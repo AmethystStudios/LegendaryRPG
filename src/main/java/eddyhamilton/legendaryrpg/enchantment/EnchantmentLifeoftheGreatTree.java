@@ -69,7 +69,6 @@ public class EnchantmentLifeoftheGreatTree extends Enchantment {
 							lotgtLvl2(Helmet, player);
 							break;
 						case 3:
-							Helmet = player.inventory.armorItemInSlot(0);
 							lotgtLvl3(Helmet, player);
 							break;
 						}

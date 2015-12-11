@@ -101,6 +101,7 @@ public class LRPGMain {
 	public static Item itemSpawnpointScroll;
 	public static Item itemRecallScroll;
 	public static Item itemClosedWolfScroll;
+	public static Item itemLightningWand;
 	
 	// Block
 	public static BlockChest blockInfiniumChest;
@@ -197,6 +198,7 @@ public class LRPGMain {
 		itemSpawnpointScroll = new SpawnpointScroll("SpawnpointScroll", "Introducing Insta-Bed!").setMaxStackSize(1);
 		itemRecallScroll = new RecallScroll("RecallScroll", "").setMaxStackSize(1);
 		itemClosedWolfScroll = new ClosedWolfScroll("ClosedWolfScroll");
+		itemLightningWand = new LightningWand("LightningWand", " Placeholder");
 
 		
 		// Block Registry
@@ -261,6 +263,7 @@ public class LRPGMain {
 		GameRegistry.registerItem(itemSpawnpointScroll, "SpawnpointScroll");
 		GameRegistry.registerItem(itemRecallScroll, "RecallScroll");
 		GameRegistry.registerItem(itemClosedWolfScroll, "ClosedWolfScroll");
+		GameRegistry.registerItem(itemLightningWand, "LightningWand");
 	}
 
 
