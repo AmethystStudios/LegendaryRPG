@@ -131,17 +131,17 @@ public class EnchantmentLifeoftheGreatTree extends Enchantment {
 
 	public static void lotgtLvl1(final ItemStack stack, final EntityPlayer player) {
 				stack.setItemDamage(stack.getItemDamage() - 10);
-				player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "20 second delay? Level 1"));
+				player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "Level 1"));
 	}
 
 	public static void lotgtLvl2(final ItemStack stack, final EntityPlayer player) {
 				stack.setItemDamage(stack.getItemDamage() - 30);
-				player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "15 second delay? Level 2"));
+				player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "Level 2"));
 	}
 
 	public static void lotgtLvl3(final ItemStack stack, final EntityPlayer player) {
 				stack.setItemDamage(stack.getItemDamage() - 50);
-				player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "10 second delay? Level 3"));
+				player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "Level 3"));
 	}
 
 }

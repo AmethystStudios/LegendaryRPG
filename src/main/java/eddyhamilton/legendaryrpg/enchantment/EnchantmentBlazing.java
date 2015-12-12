@@ -14,9 +14,9 @@ public class EnchantmentBlazing extends Enchantment
 {
     private static final String __OBFID = "CL_00000122";
 
-    public EnchantmentBlazing(int p_i1937_1_, int p_i1937_2_)
+    public EnchantmentBlazing(int ID, int Rarity)
     {
-        super(p_i1937_1_, p_i1937_2_, EnumEnchantmentType.armor_torso);
+        super(ID, Rarity, EnumEnchantmentType.armor_torso);
         this.setName("Blazing");
     }
 
@@ -37,9 +37,9 @@ public class EnchantmentBlazing extends Enchantment
         return 3;
     }
 
-    public boolean canApply(ItemStack p_92089_1_)
+    public boolean canApply(ItemStack stack)
     {
-        return p_92089_1_.getItem() instanceof ItemArmor ? true : super.canApply(p_92089_1_);
+        return stack.getItem() instanceof ItemArmor ? true : super.canApply(stack);
     }
 
     public void func_151367_b(EntityLivingBase p_151367_1_, Entity Attacker, int p_151367_3_)
@@ -50,7 +50,7 @@ public class EnchantmentBlazing extends Enchantment
         if (func_92094_a(p_151367_3_, random))
         {
 
-        	Attacker.setFire(20);
+        	Attacker.setFire(5);
             Attacker.playSound("random.click", 0.5F, 1.0F);
 
             if (itemstack != null)
