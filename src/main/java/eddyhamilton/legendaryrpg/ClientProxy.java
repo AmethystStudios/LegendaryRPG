@@ -11,6 +11,9 @@ import net.minecraftforge.client.MinecraftForgeClient;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import eddyhamilton.legendaryrpg.block.*;
+import eddyhamilton.legendaryrpg.entity.EntityDireWolf;
+import eddyhamilton.legendaryrpg.entity.ModelDireWolf;
+import eddyhamilton.legendaryrpg.entity.RenderDireWolf;
 
 public class ClientProxy extends ServerProxy {
 
@@ -19,6 +22,8 @@ public class ClientProxy extends ServerProxy {
 	 
 	 
 	 public void registerRenderThings(){
+	 	//Must Register Entities here
+			RenderingRegistry.registerEntityRenderingHandler(EntityDireWolf.class, new RenderDireWolf(new ModelDireWolf(),  null, 1.0f));
 
 		
 

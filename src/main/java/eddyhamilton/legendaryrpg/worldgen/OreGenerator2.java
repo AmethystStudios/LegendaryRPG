@@ -7,6 +7,7 @@ import java.util.*;
 import net.minecraft.world.*;
 import net.minecraft.world.chunk.*;
 import eddyhamilton.legendaryrpg.LRPGMain;
+import eddyhamilton.legendaryrpg.block.BlockRegister;
 import eddyhamilton.legendaryrpg.worldgen.feature.*;
 
 
@@ -40,7 +41,7 @@ public class OreGenerator2 implements IWorldGenerator
             final int chunkX = x + random.nextInt(16);
             final int chunkY = random.nextInt(128);
             final int chunkZ = z + random.nextInt(16);
-            new SoulSandNetherGenMinable(LRPGMain.blockInfiniumOre, 3).generate(world, random, chunkX, chunkY, chunkZ);
+            new SoulSandNetherGenMinable(BlockRegister.blockInfiniumOre, 3).generate(world, random, chunkX, chunkY, chunkZ);
         }
     }
 }

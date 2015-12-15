@@ -47,18 +47,18 @@ public class ItemPyroSuicideVest extends ItemArmor {
 	public CreativeTabs[] getCreativeTabs() {
 		return new CreativeTabs[] { CreativeTabs.tabCombat, LRPGMain.tabLegendaryRPG };
 	}
-	DamageSource SuicideDamage = (new DamageSource("lrpg.SuicideDamage")).setDamageBypassesArmor().setDamageAllowedInCreativeMode();
+	DamageSource SuicideDamage = (new DamageSource("lrpg.SuicideDamage")).setDamageBypassesArmor().setDamageAllowedInCreativeMode().setDamageIsAbsolute();
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 		
 		if (player.getHeldItem() != null
-				&& player.getHeldItem().getItem().equals(LRPGMain.itemSuicideDetonator)
+				&& player.getHeldItem().getItem().equals(ItemRegister.itemSuicideDetonator)
 				&& player.getItemInUse() != null) {
 			float f = 16.0F;
 		    player.setCurrentItemOrArmor(3, null);
 		    player.setCurrentItemOrArmor(0, null);
 			player.worldObj.newExplosion(player, player.posX, player.posY, player.posZ, f, true, true);
-			player.attackEntityFrom(SuicideDamage, 90000);
+			player.attackEntityFrom(SuicideDamage,  999999999);
 			
 		
 		

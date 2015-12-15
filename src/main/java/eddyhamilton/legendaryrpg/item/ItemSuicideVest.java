@@ -46,13 +46,13 @@ public class ItemSuicideVest extends ItemArmor {
 	public CreativeTabs[] getCreativeTabs() {
 		return new CreativeTabs[] { CreativeTabs.tabCombat, LRPGMain.tabLegendaryRPG };
 	}
-	DamageSource SuicideDamage = (new DamageSource("lrpg.SuicideDamage")).setDamageBypassesArmor().setDamageAllowedInCreativeMode();
+	DamageSource SuicideDamage = (new DamageSource("lrpg.SuicideDamage")).setDamageBypassesArmor().setDamageAllowedInCreativeMode().setDamageIsAbsolute();
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 		
 			
 		if (player.getHeldItem() != null
-				&& player.getHeldItem().getItem().equals(LRPGMain.itemSuicideDetonator)
+				&& player.getHeldItem().getItem().equals(ItemRegister.itemSuicideDetonator)
 				&& player.getItemInUse() != null) {
 			float f = 13.0F;
 		    player.setCurrentItemOrArmor(3, null);

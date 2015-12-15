@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import eddyhamilton.legendaryrpg.item.ItemRegister;
 
 public class DropHandler {
 
@@ -38,7 +39,7 @@ public class DropHandler {
 			int k;
 
 			for (k = 0; k < j; ++k) {
-				event.entityLiving.dropItem(LRPGMain.itemRennet, 1);
+				event.entityLiving.dropItem(ItemRegister.itemRennet, 1);
 			}
 			
 			
@@ -55,12 +56,12 @@ public class DropHandler {
 		}
 	
 	if(event.entityLiving instanceof EntityCreeper){
-		dropItem(new int[]{1, 88, 32, 64, 16}, event, 1, LRPGMain.itemCreeperBrain );
+		dropItem(new int[]{1, 88, 32, 64, 16}, event, 1, ItemRegister.itemCreeperBrain );
 		}
 	
 	if(event.entityLiving instanceof EntityBlaze){
 		
-		dropItem(new int[]{10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35}, event, 1, LRPGMain.itemBlazeHeart);
+		dropItem(new int[]{10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 30, 31, 32, 33, 34, 35}, event, 1, ItemRegister.itemBlazeHeart);
 		
 	}
 	

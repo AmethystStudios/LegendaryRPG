@@ -38,30 +38,24 @@ public class RecallScroll extends Item {
 		this.setTextureName(LRPGMain.MODID + ":" + string);
 		this.setInfo = string2;
 		;
-
 	}
 
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
-		if (!world.isRemote) {
-
-            ChunkCoordinates chunkcoordinates = player.getBedLocation(player.dimension);
-            player.mountEntity((Entity)null);
-            player.setPositionAndUpdate(chunkcoordinates.posX, chunkcoordinates.posY, chunkcoordinates.posZ);
-            player.destroyCurrentEquippedItem();
-            player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "You wake up at home..."));
+			//None host player crashes on use.
+			//Possibly caused by !world.isRemote
+			ChunkCoordinates chunkcoordinates = player.getBedLocation(player.dimension);
+			player.mountEntity((Entity) null);
+			player.setPositionAndUpdate(chunkcoordinates.posX, chunkcoordinates.posY, chunkcoordinates.posZ);
+			player.destroyCurrentEquippedItem();
+			player.addChatMessage(new ChatComponentText(EnumChatFormatting.ITALIC + "You wake up at home..."));
 			world.playSoundAtEntity(player, LRPGMain.MODID + ":teleport", 1, 1);
+			Random rand = new Random();
+			for (int countparticles = 0; countparticles <= 20; ++countparticles) {
+				world.spawnParticle("flame", player.posX + (rand.nextDouble() - 0.5D) * (double) player.width,
+						player.posY + rand.nextDouble() * (double) player.height - (double) player.yOffset,
+						player.posZ + (rand.nextDouble() - 0.5D) * (double) player.width, 0.0D, 0.0D, 0.0D);
 
 
-		
-		}
-
-		Random rand = new Random();
-		for (int countparticles = 0; countparticles <= 20; ++countparticles) {
-			world.spawnParticle("flame", player.posX + (rand.nextDouble() - 0.5D) * (double) player.width,
-					player.posY + rand.nextDouble() * (double) player.height
-							- (double) player.yOffset,
-					player.posZ + (rand.nextDouble() - 0.5D) * (double) player.width, 0.0D, 0.0D,
-					0.0D);
 		}
 		return itemstack;
 	}

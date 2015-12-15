@@ -53,4 +53,6 @@ Enchantments
 enchantment.Blazing=Blazing
 enchantment.LifeoftheGreatTree=Life of the Great Tree
 
+Entities:
+entity.Dire Wolf.name=Direwolf
 

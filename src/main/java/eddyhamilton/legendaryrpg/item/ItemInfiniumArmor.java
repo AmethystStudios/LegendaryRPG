@@ -27,6 +27,6 @@ public class ItemInfiniumArmor extends ItemArmor {
 	
 	@Override
 	public boolean getIsRepairable(ItemStack armor, ItemStack stack) {
-	 return stack.getItem() == LRPGMain.itemRefinedInfiniumIngot; //Alllows certain items to repair this armor.
+	 return stack.getItem() == ItemRegister.itemRefinedInfiniumIngot; //Alllows certain items to repair this armor.
 	}
 }

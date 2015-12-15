@@ -51,7 +51,7 @@ public class ClosedWolfScroll extends Item {
 			case 5:
 				player.addChatMessage(
 						new ChatComponentText(EnumChatFormatting.ITALIC + "A pair of faithful companions."));
-				ItemStack stack = new ItemStack(LRPGMain.itemWolfScrollTier1); 
+				ItemStack stack = new ItemStack(ItemRegister.itemWolfScrollTier1); 
 				if (!player.inventory.addItemStackToInventory(stack)) {
 				 player.dropPlayerItemWithRandomChoice(stack, false);
 				}
@@ -68,7 +68,7 @@ public class ClosedWolfScroll extends Item {
 			case 8:
 				player.addChatMessage(
 						new ChatComponentText(EnumChatFormatting.ITALIC + "If two is good, four is better!"));
-				ItemStack stack2 = new ItemStack(LRPGMain.itemWolfScrollTier1); 
+				ItemStack stack2 = new ItemStack(ItemRegister.itemWolfScrollTier1); 
 				if (!player.inventory.addItemStackToInventory(stack2)) {
 				 player.dropPlayerItemWithRandomChoice(stack2, false);
 				}
@@ -83,7 +83,7 @@ public class ClosedWolfScroll extends Item {
 			case 9:
 				player.addChatMessage(new ChatComponentText(
 						EnumChatFormatting.ITALIC + "This scroll has the ancient power of an entire wolf pack!"));
-				ItemStack stack3 = new ItemStack(LRPGMain.itemWolfScrollTier3); 
+				ItemStack stack3 = new ItemStack(ItemRegister.itemWolfScrollTier3); 
 				if (!player.inventory.addItemStackToInventory(stack3)) {
 				 player.dropPlayerItemWithRandomChoice(stack3, false);
 
@@ -110,7 +110,7 @@ public class ClosedWolfScroll extends Item {
 				break;
 
 			}
-			player.inventory.consumeInventoryItem(LRPGMain.itemClosedWolfScroll);
+			player.inventory.consumeInventoryItem(ItemRegister.itemClosedWolfScroll);
 
 
 		}

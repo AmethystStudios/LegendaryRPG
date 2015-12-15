@@ -26,7 +26,7 @@ public class GodArmor extends ItemArmor {
 			ItemStack itemStack) {
 		if (player.getCurrentArmor(0) != null
 				&& player.getCurrentArmor(0).getItem()
-						.equals(LRPGMain.itemOpSpeedBoots))
+						.equals(ItemRegister.itemOpSpeedBoots))
 			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 20, 20));
 		player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 10));
 		player.addPotionEffect(new PotionEffect(Potion.digSpeed.id, 10, 10));
