@@ -14,6 +14,7 @@ import net.minecraft.item.ItemTool;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 
@@ -39,7 +40,7 @@ import eddyhamilton.legendaryrpg.enchantment.EnchantmentBlazing;
 import eddyhamilton.legendaryrpg.enchantment.EnchantmentLifeoftheGreatTree;
 import eddyhamilton.legendaryrpg.entity.EntityRegister;
 import eddyhamilton.legendaryrpg.item.*;
-import eddyhamilton.legendaryrpg.worldgen.OreGenerator2;
+import eddyhamilton.legendaryrpg.worldgen.*;
 
 @Mod(modid = LRPGMain.MODID, name = LRPGMain.NAME, version = LRPGMain.VERSION)
 public class LRPGMain {
@@ -89,10 +90,12 @@ public class LRPGMain {
 	/************************************************************
 	 * Generation- Ore and otherwise Currently botched
 	 ************************************************************/
-	private OreGenerator2 OreManager;
+	private GenerationManager1 GenerationManager;
+	private TestStructureGenerator TestStructureGenerator;
 
 	public LRPGMain() {
-		this.OreManager = new OreGenerator2();
+		this.GenerationManager = new GenerationManager1();
+	
 	}
 
 	// PreInit. Registers, Recipes, Configs,etc, go here.
@@ -108,7 +111,7 @@ public class LRPGMain {
 		ItemRegister.mainRegistry();
 
 		// Generation Registry
-		GameRegistry.registerWorldGenerator((IWorldGenerator) this.OreManager, 1);
+		GameRegistry.registerWorldGenerator((IWorldGenerator) this.GenerationManager, 5);
 
 		proxy.registerRenderThings();
 

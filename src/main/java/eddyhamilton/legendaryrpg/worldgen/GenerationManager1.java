@@ -11,7 +11,7 @@ import eddyhamilton.legendaryrpg.block.BlockRegister;
 import eddyhamilton.legendaryrpg.worldgen.feature.*;
 
 
-public class OreGenerator2 implements IWorldGenerator
+public class GenerationManager1 implements IWorldGenerator
 {
     public void generate(final Random random, final int chunkX, final int chunkZ, final World world, final IChunkProvider chunkGenerator, final IChunkProvider chunkProvider) {
         switch (world.provider.dimensionId) {
@@ -34,6 +34,14 @@ public class OreGenerator2 implements IWorldGenerator
     }
     
     private void generateInOverworld(final World world, final Random random, final int x, final int z) {
+    	
+    	
+    	int Xcoord1 = x + random.nextInt(16);
+    	  int Ycoord1 = 128;//random.nextInt(80);
+    	  int Zcoord1 = z + random.nextInt(16);
+    	   
+    	  (new TestStructureGenerator()).generate(world, random, Xcoord1, Ycoord1, Zcoord1);
+
     }
     
     private void generateInNether(final World world, final Random random, final int x, final int z) {

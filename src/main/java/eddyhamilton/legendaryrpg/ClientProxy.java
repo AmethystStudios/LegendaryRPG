@@ -23,7 +23,7 @@ public class ClientProxy extends ServerProxy {
 	 
 	 public void registerRenderThings(){
 	 	//Must Register Entities here
-			RenderingRegistry.registerEntityRenderingHandler(EntityDireWolf.class, new RenderDireWolf(new ModelDireWolf(),  null, 1.0f));
+			RenderingRegistry.registerEntityRenderingHandler(EntityDireWolf.class, new RenderDireWolf(new ModelDireWolf(), new ModelDireWolf(), 0f));
 
 		
 
