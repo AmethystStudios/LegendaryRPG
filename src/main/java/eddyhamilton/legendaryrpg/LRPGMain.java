@@ -1,5 +1,5 @@
 package eddyhamilton.legendaryrpg;
-//erase this dangit!
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
 import net.minecraft.block.material.Material;
