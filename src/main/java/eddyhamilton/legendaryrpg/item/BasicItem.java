@@ -10,11 +10,11 @@ import net.minecraft.item.ItemStack;
 
 public class BasicItem extends Item {
 private final String setInfo;
-	public BasicItem(String string, String string2) {
+	public BasicItem(String name, String toolTip) {
 		super();
-		this.setUnlocalizedName(string);
-		this.setTextureName(LRPGMain.MODID + ":" + string);
-		this.setInfo = string2;
+		this.setUnlocalizedName(name);
+		this.setTextureName(LRPGMain.MODID + ":" + name);
+		this.setInfo = toolTip;
 	}
 	
 	   public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean bool) {

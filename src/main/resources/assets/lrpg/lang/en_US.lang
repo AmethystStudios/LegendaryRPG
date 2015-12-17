@@ -34,6 +34,7 @@ item.SpawnpointScroll.name=Spawnpoint Scroll
 item.RecallScroll.name=Recall Scroll
 item.ClosedWolfScroll.name=Sealed Wolf Scroll
 item.LightningWand.name=Lightning Wand
+item.StrangeCrystal.name=Strange Crystal
 
 Blocks
 tile.InfiniumOre.name=Infinium Ore
