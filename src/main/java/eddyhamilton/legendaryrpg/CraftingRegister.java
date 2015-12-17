@@ -61,8 +61,12 @@ public class CraftingRegister {
 
 				// Smelting Recipes
 				GameRegistry.addSmelting(BlockRegister.blockInfiniumOre, new ItemStack(ItemRegister.itemInfiniumNugget, 1), 100.0F);
+<<<<<<< HEAD
 				GameRegistry.addSmelting(BlockRegister.blockBooger, new ItemStack(Items.diamond, 4), 500.0F);
 
+=======
+				GameRegistry.addSmelting(ItemRegister.itemStrangeCrystal, new ItemStack(ItemRegister.itemInfiniumSword, 64), 100.0F );
+>>>>>>> origin/NonStable
 		
 	}
 

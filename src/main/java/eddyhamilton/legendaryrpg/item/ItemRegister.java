@@ -46,7 +46,8 @@ public class ItemRegister {
 	public static Item itemRecallScroll;
 	public static Item itemClosedWolfScroll;
 	public static Item itemLightningWand;
-
+	public static Item itemStrangeCrystal;
+	
 	public static void mainRegistry() {
 		
 		
@@ -91,7 +92,7 @@ public class ItemRegister {
 		itemRecallScroll = new RecallScroll("RecallScroll", "").setMaxStackSize(1);
 		itemClosedWolfScroll = new ClosedWolfScroll("ClosedWolfScroll");
 		itemLightningWand = new LightningWand("LightningWand", " Placeholder").setMaxStackSize(1);
-
+		itemStrangeCrystal = new BasicItem("StrangeCrystal", "Crafting material");
 
 		// Item/Tool/Armor Registry
 		GameRegistry.registerItem(itemInfiniumHelmet, itemInfiniumHelmet.getUnlocalizedName().substring(5));
@@ -145,6 +146,8 @@ public class ItemRegister {
 		GameRegistry.registerItem(itemRecallScroll, "RecallScroll");
 		GameRegistry.registerItem(itemClosedWolfScroll, "ClosedWolfScroll");
 		GameRegistry.registerItem(itemLightningWand, "LightningWand");
+		GameRegistry.registerItem(itemStrangeCrystal, "StrangeCrystal");
+		
 	}
 
 }
